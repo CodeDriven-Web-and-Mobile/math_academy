@@ -132,7 +132,7 @@ export default function TopicPage() {
           <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
             <span>Grade {gradeNumber}</span>
             <span>•</span>
-            <span className="capitalize">{params.subject.replace('-', ' ')}</span>
+            <span className="capitalize">{subjectId.replace(/-/g, ' ')}</span>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-3">{topicData.title}</h1>
           <p className="text-lg text-gray-600">{topicData.description}</p>
@@ -162,22 +162,22 @@ export default function TopicPage() {
                 </p>
                 <div className="flex gap-2 flex-wrap">
                   <span className="bg-white/20 px-3 py-1 rounded-full text-sm">
-                    {topicData.questions.filter(q => q.difficulty === 'easy').length} Easy
+                    {topicData.questions.filter((q: any) => q.difficulty === 'easy').length} Easy
                   </span>
                   <span className="bg-white/20 px-3 py-1 rounded-full text-sm">
-                    {topicData.questions.filter(q => q.difficulty === 'medium').length} Medium
+                    {topicData.questions.filter((q: any) => q.difficulty === 'medium').length} Medium
                   </span>
                   <span className="bg-white/20 px-3 py-1 rounded-full text-sm">
-                    {topicData.questions.filter(q => q.difficulty === 'hard').length} Hard
+                    {topicData.questions.filter((q: any) => q.difficulty === 'hard').length} Hard
                   </span>
-                  {topicData.questions.filter(q => q.difficulty === 'advanced').length > 0 && (
+                  {topicData.questions.filter((q: any) => q.difficulty === 'advanced').length > 0 && (
                     <span className="bg-white/20 px-3 py-1 rounded-full text-sm">
-                      {topicData.questions.filter(q => q.difficulty === 'advanced').length} Advanced
+                      {topicData.questions.filter((q: any) => q.difficulty === 'advanced').length} Advanced
                     </span>
                   )}
                 </div>
               </div>
-              <Link href={`/grade/${gradeNumber}/subject/${params.subject}/topic/${params.topic}/quiz`}>
+              <Link href={`/grade/${gradeNumber}/subject/${subjectId}/topic/${topicId}/quiz`}>
                 <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
                   Start Quiz
                   <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
