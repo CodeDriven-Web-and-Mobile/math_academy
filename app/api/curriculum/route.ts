@@ -1,59 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getAllGrades, getGradeByNumber, getStatistics } from '@/lib/db-operations';
-import { getDatabase } from '@/lib/database';
+import { curriculumData } from '@/lib/curriculum-data';
 
 // GET all grades or specific grade
 export async function GET(request: NextRequest) {
   try {
-    // Ensure database is initialized
-    try {
-      getDatabase();
-    } catch (dbError) {
-      console.error('Database initialization error:', dbError);
-    }
-
     const { searchParams } = new URL(request.url);
     const grade = searchParams.get('grade');
 
     if (grade) {
       const gradeNumber = parseInt(grade);
+      const gradeData = curriculumData.find(g => g.grade === gradeNumber);
       
-      try {
-        const gradeData = getGradeByNumber(gradeNumber);
-        
-        if (!gradeData) {
-          return NextResponse.json(
-            { error: `Grade ${gradeNumber} not found` },
-            { status: 404 }
-          );
-        }
-
-        return NextResponse.json(gradeData);
-      } catch (error: any) {
-        console.error(`Error fetching grade ${gradeNumber}:`, error);
+      if (!gradeData) {
         return NextResponse.json(
-          { error: 'Database error', message: error.message },
-          { status: 500 }
+          { error: `Grade ${gradeNumber} not found` },
+          { status: 404 }
         );
       }
+
+      return NextResponse.json(gradeData);
     }
 
     // Return all grades
-    try {
-      const grades = getAllGrades();
-      return NextResponse.json(grades);
-    } catch (error: any) {
-      console.error('Error fetching all grades:', error);
-      return NextResponse.json(
-        { error: 'Database error', message: error.message },
-        { status: 500 }
-      );
-    }
+    return NextResponse.json(curriculumData);
 
   } catch (error: any) {
     console.error('Error fetching curriculum:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch curriculum data', message: error.message, stack: error.stack },
+      { error: 'Failed to fetch curriculum data', message: error.message },
       { status: 500 }
     );
   }
@@ -65,8 +39,21 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     
     if (body.action === 'statistics') {
-      const stats = getStatistics();
-      return NextResponse.json(stats);
+      // Calculate statistics from curriculum data
+      const totalGrades = curriculumData.length;
+      const totalSubjects = curriculumData.reduce((sum, g) => sum + g.subjects.length, 0);
+      const totalTopics = curriculumData.reduce((sum, g) => 
+        sum + g.subjects.reduce((s, subj) => s + subj.topics.length, 0), 0);
+      const totalQuestions = curriculumData.reduce((sum, g) => 
+        sum + g.subjects.reduce((s, subj) => 
+          s + subj.topics.reduce((t, topic) => t + topic.questions.length, 0), 0), 0);
+
+      return NextResponse.json({
+        totalGrades,
+        totalSubjects,
+        totalTopics,
+        totalQuestions
+      });
     }
 
     return NextResponse.json(
