@@ -1,8 +1,11 @@
 import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BookOpen, Award, Sparkles } from 'lucide-react';
-import { getAllGrades } from '@/lib/db-operations';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { BookOpen, Calculator, TrendingUp, Award } from 'lucide-react';
+import { getCurriculum } from '@/lib/db-operations';
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 
 const gradeColors = [
   'from-blue-500 to-cyan-500',
