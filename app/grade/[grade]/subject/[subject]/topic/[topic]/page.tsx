@@ -1,21 +1,69 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { ArrowLeft, BookOpen, FileText } from 'lucide-react';
-import { getTopicByIds } from '@/lib/db-operations';
-import { notFound } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import MathContent from '@/components/MathContent';
 
-export default function TopicPage({ 
-  params 
-}: { 
-  params: { grade: string; subject: string; topic: string } 
-}) {
-  const gradeNumber = parseInt(params.grade);
-  const topicData = getTopicByIds(gradeNumber, params.subject, params.topic);
+export default function TopicPage() {
+  const params = useParams();
+  const router = useRouter();
+  const gradeNumber = parseInt(params.grade as string);
+  const subjectId = params.subject as string;
+  const topicId = params.topic as string;
+  const [topicData, setTopicData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!topicData || gradeNumber < 6 || gradeNumber > 12) {
-    notFound();
+  useEffect(() => {
+    async function fetchTopicData() {
+      try {
+        const response = await fetch(`/api/curriculum?grade=${gradeNumber}`);
+        if (!response.ok) {
+          router.push(`/grade/${gradeNumber}/subject/${subjectId}`);
+          return;
+        }
+        const gradeData = await response.json();
+        const subject = gradeData.subjects?.find((s: any) => s.id === subjectId);
+        const topic = subject?.topics?.find((t: any) => t.id === topicId);
+        
+        if (!topic) {
+          router.push(`/grade/${gradeNumber}/subject/${subjectId}`);
+          return;
+        }
+        
+        setTopicData(topic);
+      } catch (error) {
+        console.error('Error fetching topic data:', error);
+        router.push(`/grade/${gradeNumber}/subject/${subjectId}`);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (gradeNumber < 6 || gradeNumber > 12) {
+      router.push('/');
+      return;
+    }
+
+    fetchTopicData();
+  }, [gradeNumber, subjectId, topicId, router]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!topicData) {
+    return null;
   }
 
   // Convert markdown-style content to HTML-like structure
