@@ -122,7 +122,7 @@ export default function SubjectPage() {
 
         {/* Topic Cards */}
         <div className="space-y-4">
-          {subjectData.topics.map((topic, index) => (
+          {subjectData.topics.map((topic: any, index: number) => (
             <Card key={topic.id} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-400">
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -141,17 +141,17 @@ export default function SubjectPage() {
                         {topic.questions.length} Questions
                       </Badge>
                       <Badge variant="secondary">
-                        {topic.questions.filter(q => q.difficulty === 'easy').length} Easy
+                        {topic.questions.filter((q: any) => q.difficulty === 'easy').length} Easy
                       </Badge>
                       <Badge variant="secondary">
-                        {topic.questions.filter(q => q.difficulty === 'medium').length} Medium
+                        {topic.questions.filter((q: any) => q.difficulty === 'medium').length} Medium
                       </Badge>
                       <Badge variant="secondary">
-                        {topic.questions.filter(q => q.difficulty === 'hard').length} Hard
+                        {topic.questions.filter((q: any) => q.difficulty === 'hard').length} Hard
                       </Badge>
-                      {topic.questions.filter(q => q.difficulty === 'advanced').length > 0 && (
+                      {topic.questions.filter((q: any) => q.difficulty === 'advanced').length > 0 && (
                         <Badge variant="secondary">
-                          {topic.questions.filter(q => q.difficulty === 'advanced').length} Advanced
+                          {topic.questions.filter((q: any) => q.difficulty === 'advanced').length} Advanced
                         </Badge>
                       )}
                     </div>

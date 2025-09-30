@@ -112,7 +112,7 @@ export default function GradePage() {
 
         {/* Subject Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {gradeData.subjects.map((subject) => (
+          {gradeData.subjects.map((subject: any) => (
             <Link key={subject.id} href={`/grade/${gradeNumber}/subject/${subject.id}`}>
               <Card className="group hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 hover:border-blue-400 hover:-translate-y-1 h-full">
                 <CardHeader>
