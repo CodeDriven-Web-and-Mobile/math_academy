@@ -1,21 +1,67 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, BookOpen, FileText } from 'lucide-react';
-import { getSubjectByIds } from '@/lib/db-operations';
-import { notFound } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
-export default function SubjectPage({ 
-  params 
-}: { 
-  params: { grade: string; subject: string } 
-}) {
-  const gradeNumber = parseInt(params.grade);
-  const subjectData = getSubjectByIds(gradeNumber, params.subject);
+export default function SubjectPage() {
+  const params = useParams();
+  const router = useRouter();
+  const gradeNumber = parseInt(params.grade as string);
+  const subjectId = params.subject as string;
+  const [subjectData, setSubjectData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!subjectData || gradeNumber < 6 || gradeNumber > 12) {
-    notFound();
+  useEffect(() => {
+    async function fetchSubjectData() {
+      try {
+        const response = await fetch(`/api/curriculum?grade=${gradeNumber}`);
+        if (!response.ok) {
+          router.push(`/grade/${gradeNumber}`);
+          return;
+        }
+        const gradeData = await response.json();
+        const subject = gradeData.subjects?.find((s: any) => s.id === subjectId);
+        
+        if (!subject) {
+          router.push(`/grade/${gradeNumber}`);
+          return;
+        }
+        
+        setSubjectData(subject);
+      } catch (error) {
+        console.error('Error fetching subject data:', error);
+        router.push(`/grade/${gradeNumber}`);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (gradeNumber < 6 || gradeNumber > 12) {
+      router.push('/');
+      return;
+    }
+
+    fetchSubjectData();
+  }, [gradeNumber, subjectId, router]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!subjectData) {
+    return null;
   }
 
   return (

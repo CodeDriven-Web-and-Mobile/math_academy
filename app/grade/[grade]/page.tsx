@@ -1,16 +1,58 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, BookOpen } from 'lucide-react';
-import { getGradeByNumber } from '@/lib/db-operations';
-import { notFound } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
-export default function GradePage({ params }: { params: { grade: string } }) {
-  const gradeNumber = parseInt(params.grade);
-  const gradeData = getGradeByNumber(gradeNumber);
+export default function GradePage() {
+  const params = useParams();
+  const router = useRouter();
+  const gradeNumber = parseInt(params.grade as string);
+  const [gradeData, setGradeData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!gradeData || gradeNumber < 6 || gradeNumber > 12) {
-    notFound();
+  useEffect(() => {
+    async function fetchGradeData() {
+      try {
+        const response = await fetch(`/api/curriculum?grade=${gradeNumber}`);
+        if (!response.ok) {
+          router.push('/');
+          return;
+        }
+        const data = await response.json();
+        setGradeData(data);
+      } catch (error) {
+        console.error('Error fetching grade data:', error);
+        router.push('/');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (gradeNumber < 6 || gradeNumber > 12) {
+      router.push('/');
+      return;
+    }
+
+    fetchGradeData();
+  }, [gradeNumber, router]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!gradeData) {
+    return null;
   }
 
   const gradeColors = [
