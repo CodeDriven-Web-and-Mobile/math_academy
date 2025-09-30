@@ -191,7 +191,7 @@ export default function QuizPage() {
             </Card>
 
             {/* Easy */}
-            {topicData.questions.filter(q => q.difficulty === 'easy').length > 0 && (
+            {topicData.questions.filter((q: any) => q.difficulty === 'easy').length > 0 && (
               <Card 
                 className="cursor-pointer hover:shadow-xl transition-all border-2 hover:border-green-500"
                 onClick={() => startQuiz('easy')}
@@ -202,7 +202,7 @@ export default function QuizPage() {
                     <h3 className="text-2xl font-bold mb-2">Easy</h3>
                     <p className="text-gray-600 mb-4">Build your foundation</p>
                     <Badge className="bg-green-100 text-green-800 text-lg px-4 py-1">
-                      {topicData.questions.filter(q => q.difficulty === 'easy').length} Questions
+                      {topicData.questions.filter((q: any) => q.difficulty === 'easy').length} Questions
                     </Badge>
                   </div>
                 </CardContent>
@@ -210,7 +210,7 @@ export default function QuizPage() {
             )}
 
             {/* Medium */}
-            {topicData.questions.filter(q => q.difficulty === 'medium').length > 0 && (
+            {topicData.questions.filter((q: any) => q.difficulty === 'medium').length > 0 && (
               <Card 
                 className="cursor-pointer hover:shadow-xl transition-all border-2 hover:border-yellow-500"
                 onClick={() => startQuiz('medium')}
@@ -221,7 +221,7 @@ export default function QuizPage() {
                     <h3 className="text-2xl font-bold mb-2">Medium</h3>
                     <p className="text-gray-600 mb-4">Test your understanding</p>
                     <Badge className="bg-yellow-100 text-yellow-800 text-lg px-4 py-1">
-                      {topicData.questions.filter(q => q.difficulty === 'medium').length} Questions
+                      {topicData.questions.filter((q: any) => q.difficulty === 'medium').length} Questions
                     </Badge>
                   </div>
                 </CardContent>
@@ -229,7 +229,7 @@ export default function QuizPage() {
             )}
 
             {/* Hard */}
-            {topicData.questions.filter(q => q.difficulty === 'hard').length > 0 && (
+            {topicData.questions.filter((q: any) => q.difficulty === 'hard').length > 0 && (
               <Card 
                 className="cursor-pointer hover:shadow-xl transition-all border-2 hover:border-orange-500"
                 onClick={() => startQuiz('hard')}
@@ -240,7 +240,7 @@ export default function QuizPage() {
                     <h3 className="text-2xl font-bold mb-2">Hard</h3>
                     <p className="text-gray-600 mb-4">Challenge yourself</p>
                     <Badge className="bg-orange-100 text-orange-800 text-lg px-4 py-1">
-                      {topicData.questions.filter(q => q.difficulty === 'hard').length} Questions
+                      {topicData.questions.filter((q: any) => q.difficulty === 'hard').length} Questions
                     </Badge>
                   </div>
                 </CardContent>
@@ -248,7 +248,7 @@ export default function QuizPage() {
             )}
 
             {/* Advanced */}
-            {topicData.questions.filter(q => q.difficulty === 'advanced').length > 0 && (
+            {topicData.questions.filter((q: any) => q.difficulty === 'advanced').length > 0 && (
               <Card 
                 className="cursor-pointer hover:shadow-xl transition-all border-2 hover:border-red-500"
                 onClick={() => startQuiz('advanced')}
@@ -259,7 +259,7 @@ export default function QuizPage() {
                     <h3 className="text-2xl font-bold mb-2">Advanced</h3>
                     <p className="text-gray-600 mb-4">Master the topic</p>
                     <Badge className="bg-red-100 text-red-800 text-lg px-4 py-1">
-                      {topicData.questions.filter(q => q.difficulty === 'advanced').length} Questions
+                      {topicData.questions.filter((q: any) => q.difficulty === 'advanced').length} Questions
                     </Badge>
                   </div>
                 </CardContent>
@@ -300,10 +300,11 @@ export default function QuizPage() {
                 </div>
               </div>
 
+
               <div className="space-y-3">
                 {percentage >= 80 && (
                   <p className="text-lg text-green-600 font-semibold">
-                    🎉 Excellent work! You've mastered this topic!
+                    🎉 Excellent work! You&apos;ve mastered this topic!
                   </p>
                 )}
                 {percentage >= 60 && percentage < 80 && (
