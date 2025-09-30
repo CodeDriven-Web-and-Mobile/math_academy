@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
-import { BookOpen, Calculator, TrendingUp, Award } from 'lucide-react';
-import { getCurriculum } from '@/lib/db-operations';
+import { BookOpen, Calculator, TrendingUp, Award, GraduationCap, Sparkles } from 'lucide-react';
+import { getAllGrades } from '@/lib/db-operations';
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -19,7 +19,7 @@ const gradeColors = [
 
 export default function Home() {
   // Get grades from database
-  const grades = getAllGrades().map((gradeData, index) => ({
+  const grades = getAllGrades().map((gradeData: any, index: number) => ({
     grade: gradeData.grade,
     color: gradeColors[index % gradeColors.length],
     subjects: gradeData.subjects.length,
@@ -74,7 +74,7 @@ export default function Home() {
 
         {/* Grade Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {grades.map(({ grade, color, subjects }) => (
+          {grades.map(({ grade, color, subjects }: { grade: number; color: string; subjects: number }) => (
             <Link key={grade} href={`/grade/${grade}`}>
               <Card className="group hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 hover:border-blue-400 hover:-translate-y-1">
                 <CardHeader>
