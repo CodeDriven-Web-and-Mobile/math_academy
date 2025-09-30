@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { BookOpen, Calculator, TrendingUp, Award, GraduationCap, Sparkles } from 'lucide-react';
-import { getAllGrades } from '@/lib/db-operations';
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -17,12 +16,23 @@ const gradeColors = [
   'from-teal-500 to-cyan-500',
 ];
 
+// Static grade data for initial render
+const staticGrades = [
+  { grade: 6, subjects: 3 },
+  { grade: 7, subjects: 3 },
+  { grade: 8, subjects: 3 },
+  { grade: 9, subjects: 2 },
+  { grade: 10, subjects: 2 },
+  { grade: 11, subjects: 2 },
+  { grade: 12, subjects: 2 },
+];
+
 export default function Home() {
-  // Get grades from database
-  const grades = getAllGrades().map((gradeData: any, index: number) => ({
+  // Use static data to avoid database calls during render
+  const grades = staticGrades.map((gradeData, index: number) => ({
     grade: gradeData.grade,
     color: gradeColors[index % gradeColors.length],
-    subjects: gradeData.subjects.length,
+    subjects: gradeData.subjects,
   }));
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
