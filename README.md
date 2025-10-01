@@ -11,6 +11,9 @@ A comprehensive math education platform for Ontario students in grades 6-12, ali
 - **Interactive Learning**: Detailed explanations with examples for each topic
 - **Progress Tracking**: Real-time quiz scoring and performance feedback
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **AI Content Generation**: Generate questions and lesson content locally using OpenAI, Claude, or DeepSeek
+- **LaTeX Math Rendering**: Beautiful mathematical formulas using KaTeX
+- **Mermaid Diagrams**: Visual diagrams and flowcharts in lessons
 
 ## 🚀 Getting Started
 
@@ -30,12 +33,43 @@ cd ontario-math-academy
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables (optional, for AI features):
+```bash
+cp .env.local.example .env.local
+# Edit .env.local and add your API keys
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## 🤖 AI Content Generation (Local Only)
+
+The platform includes AI-powered content generation for local development:
+
+### Setup:
+1. Add your API keys to `.env.local`:
+   ```bash
+   OPENAI_API_KEY=sk-your-key-here
+   ENABLE_AI_QUESTIONS=true
+   DEFAULT_AI_PROVIDER=openai
+   ```
+
+2. Access AI generators:
+   - **Questions**: http://localhost:3000/admin/ai-generator
+   - **Content**: http://localhost:3000/admin/content-generator
+
+### Workflow:
+1. Generate content locally using AI
+2. Copy the generated content
+3. Add to `lib/curriculum-data.ts`
+4. Test locally
+5. Push to GitHub for deployment
+
+**📖 See [LOCAL-AI-WORKFLOW.md](./LOCAL-AI-WORKFLOW.md) for detailed instructions.**
 
 ## 📚 Application Structure
 
