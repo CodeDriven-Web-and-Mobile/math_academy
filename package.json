@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "migrate": "tsx scripts/migrate-to-db.ts",
-    "db:reset": "rm -f data/ontario-math.db && npm run migrate"
+    "db:reset": "rm -f data/ontario-math.db && npm run migrate",
+    "export-db": "tsx scripts/export-db-to-json.ts"
   },
   "dependencies": {
     "@types/better-sqlite3": "^7.6.13",

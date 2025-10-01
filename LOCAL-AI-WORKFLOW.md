@@ -4,6 +4,34 @@
 
 This guide explains how to use AI features locally to generate content, then deploy the static content to Netlify.
 
+## ⚡ Quick Start (Automated Export)
+
+**NEW:** You can now use the admin panel and automatically export to the file!
+
+```bash
+# 1. Start dev server
+npm run dev
+
+# 2. Use admin panel to create content
+# Visit: http://localhost:3000/admin/ai-generator
+
+# 3. Export database to curriculum-data.ts
+npm run export-db
+
+# 4. Test and deploy
+git add lib/curriculum-data.ts
+git commit -m "Add: New content"
+git push origin main
+```
+
+**📖 See [EXPORT-WORKFLOW.md](./EXPORT-WORKFLOW.md) for the complete automated workflow.**
+
+---
+
+## 📝 Manual Workflow (Alternative)
+
+If you prefer manual control, you can copy-paste content:
+
 ---
 
 ## 🚀 Workflow
