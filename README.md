@@ -213,6 +213,16 @@ To add new topics or questions, edit `lib/curriculum-data.ts`:
 }
 ```
 
+Summary
+Before: Generate → Copy → Paste → Save → Deploy Now: Generate → Export → Deploy
+
+Your new workflow is:
+
+Use admin panel (everything saves automatically)
+Run npm run export-db
+Push to GitHub
+Netlify deploys
+
 ## 📝 Future Enhancements
 
 - User authentication and progress saving

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Sparkles, BookOpen, Settings } from 'lucide-react';
+import { ArrowLeft, Sparkles, BookOpen, Settings, FileEdit } from 'lucide-react';
 
 export default function AdminPage() {
   return (
@@ -105,6 +105,34 @@ export default function AdminPage() {
                   <span className="text-gray-600">Edit questions →</span>
                   <svg 
                     className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          {/* Content Editor */}
+          <Link href="/admin/content-editor">
+            <Card className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-orange-400 hover:-translate-y-1 h-full">
+              <CardHeader>
+                <div className="bg-gradient-to-br from-orange-500 to-red-500 w-16 h-16 rounded-xl flex items-center justify-center mb-4">
+                  <FileEdit className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-xl">Content Editor</CardTitle>
+                <CardDescription>
+                  Edit lesson content, descriptions, and add LaTeX formulas
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-600">Edit content →</span>
+                  <svg 
+                    className="w-5 h-5 text-orange-600 group-hover:translate-x-1 transition-transform" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"

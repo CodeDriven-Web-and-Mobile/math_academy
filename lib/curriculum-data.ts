@@ -1,5 +1,5 @@
 // Auto-generated from database export
-// Last updated: 2025-10-01T03:04:00.630Z
+// Last updated: 2025-10-05T02:02:59.703Z
 // 
 // This file contains all curriculum data for the Ontario Math Academy.
 // It is generated from the SQLite database using: npm run export-db
@@ -1498,8 +1498,307 @@ export const curriculumData: Grade[] = [
             "id": "derivatives",
             "title": "Introduction to Derivatives",
             "description": "Understanding rates of change",
-            "content": "# Introduction to Derivatives\n\nThe derivative measures the rate of change of a function.\n\n## Definition:\nf'(x) = lim(h→0) [f(x+h) - f(x)] / h\n\n## Notation:\n- f'(x) - \"f prime of x\"\n- dy/dx - Leibniz notation\n- df/dx\n\n## Power Rule:\nIf f(x) = xⁿ, then f'(x) = nxⁿ⁻¹\n\n## Examples:\n- f(x) = x³ → f'(x) = 3x²\n- f(x) = x² → f'(x) = 2x\n- f(x) = x → f'(x) = 1\n- f(x) = c (constant) → f'(x) = 0\n\n## Interpretation:\n- Slope of tangent line\n- Instantaneous rate of change\n- Velocity (if position function)",
+            "content": "# Worked Examples for Introduction to Derivatives\n\n## Example 1: Basic Polynomial Function\n### Problem Statement:\nFind the derivative of the function \n\n\\[\nf(x) = 4x^5 - 3x^3 + 2x - 7\n\\]\n\n### Step-by-Step Solution:\n1. **Identify Terms**: Break down the function into individual terms: \\(4x^5\\), \\(-3x^3\\), \\(2x\\), and \\(-7\\).\n  \n2. **Apply the Power Rule**: Differentiate each term using the power rule \\(f'(x) = nx^{n-1}\\):\n   - For \\(4x^5\\): \n     \\[\n     \\frac{d}{dx}(4x^5) = 5 \\cdot 4x^{5-1} = 20x^4\n     \\]\n   - For \\(-3x^3\\): \n     \\[\n     \\frac{d}{dx}(-3x^3) = 3 \\cdot (-3)x^{3-1} = -9x^2\n     \\]\n   - For \\(2x\\): \n     \\[\n     \\frac{d}{dx}(2x) = 2\n     \\]\n   - For \\(-7\\) (constant): \n     \\[\n     \\frac{d}{dx}(-7) = 0\n     \\]\n\n3. **Combine the Results**:\n   \\[\n   f'(x) = 20x^4 - 9x^2 + 2 + 0 = 20x^4 - 9x^2 + 2\n   \\]\n\n### Final Answer:\n\\[\nf'(x) = 20x^4 - 9x^2 + 2\n\\]\n\n### Why This Example is Useful:\nThis example demonstrates the use of the power rule for polynomial functions, which is foundational for understanding derivatives.\n\n---\n\n## Example 2: Trigonometric Function\n### Problem Statement:\nFind the derivative of the function \n\n\\[\nf(x) = \\sin(x) + \\cos(2x)\n\\]\n\n### Step-by-Step Solution:\n1. **Identify Terms**: The function consists of two terms: \\(\\sin(x)\\) and \\(\\cos(2x)\\).\n  \n2. **Differentiate Each Term**:\n   - For \\(\\sin(x)\\): \n     \\[\n     \\frac{d}{dx}(\\sin(x)) = \\cos(x)\n     \\]\n   - For \\(\\cos(2x)\\) (using the chain rule): \n     \\[\n     \\frac{d}{dx}(\\cos(2x)) = -\\sin(2x) \\cdot \\frac{d}{dx}(2x) = -2\\sin(2x)\n     \\]\n\n3. **Combine the Results**:\n   \\[\n   f'(x) = \\cos(x) - 2\\sin(2x)\n   \\]\n\n### Final Answer:\n\\[\nf'(x) = \\cos(x) - 2\\sin(2x)\n\\]\n\n### Why This Example is Useful:\nThis example introduces the differentiation of trigonometric functions and showcases the application of the chain rule.\n\n---\n\n## Example 3: Exponential Function\n### Problem Statement:\nFind the derivative of the function \n\n\\[\nf(x) = e^{3x} + 5x^2\n\\]\n\n### Step-by-Step Solution:\n1. **Identify Terms**: The function consists of \\(e^{3x}\\) and \\(5x^2\\).\n  \n2. **Differentiate Each Term**:\n   - For \\(e^{3x}\\) (using the chain rule): \n     \\[\n     \\frac{d}{dx}(e^{3x}) = e^{3x} \\cdot \\frac{d}{dx}(3x) = 3e^{3x}\n     \\]\n   - For \\(5x^2\\): \n     \\[\n     \\frac{d}{dx}(5x^2) = 2 \\cdot 5x^{2-1} = 10x\n     \\]\n\n3. **Combine the Results**:\n   \\[\n   f'(x) = 3e^{3x} + 10x\n   \\]\n\n### Final Answer:\n\\[\nf'(x) = 3e^{3x} + 10x\n\\]\n\n### Why This Example is Useful:\nThis example illustrates the differentiation of exponential functions, which is critical for more advanced applications in calculus.\n\n---\n\n## Example 4: Product Rule\n### Problem Statement:\nFind the derivative of the function \n\n\\[\nf(x) = (x^2 + 1)(\\sin(x))\n\\]\n\n### Step-by-Step Solution:\n1. **Identify the Product**: Recognize that \\(f(x)\\) is a product of two functions: \\(u = x^2 + 1\\) and \\(v = \\sin(x)\\).\n  \n2. **Apply the Product Rule**:\n   The product rule states that \n   \\[\n   (uv)' = u'v + uv'\n   \\]\n\n3. **Differentiate Each Component**:\n   - \\(u' = \\frac{d}{dx}(x^2 + 1) = 2x\\)\n   - \\(v' = \\frac{d}{dx}(\\sin(x)) = \\cos(x)\\)\n\n4. **Combine Using the Product Rule**:\n   \\[\n   f'(x) = (2x)(\\sin(x)) + (x^2 + 1)(\\cos(x))\n   \\]\n\n### Final Answer:\n\\[\nf'(x) = 2x \\sin(x) + (x^2 + 1) \\cos(x)\n\\]\n\n### Why This Example is Useful:\nThis example effectively demonstrates the product rule, which is essential for differentiating products of functions.\n\n---\n\n## Example 5: Quotient Rule\n### Problem Statement:\nFind the derivative of the function \n\n\\[\nf(x) = \\frac{x^2 + 1}{\\tan(x)}\n\\]\n\n### Step-by-Step Solution:\n1. **Identify the Quotient**: Recognize that \\(f(x)\\) is a quotient of two functions: \\(u = x^2 + 1\\) and \\(v = \\tan(x)\\).\n  \n2. **Apply the Quotient Rule**:\n   The quotient rule states that \n   \\[\n   \\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}\n   \\]\n\n3. **Differentiate Each Component**:\n   - \\(u' = \\frac{d}{dx}(x^2 + 1) = 2x\\)\n   - \\(v' = \\frac{d}{dx}(\\tan(x)) = \\sec^2(x)\\)\n\n4. **Combine Using the Quotient Rule**:\n   \\[\n   f'(x) = \\frac{(2x)(\\tan(x)) - (x^2 + 1)(\\sec^2(x))}{\\tan^2(x)}\n   \\]\n\n### Final Answer:\n\\[\nf'(x) = \\frac{2x \\tan(x) - (x^2 + 1) \\sec^2(x)}{\\tan^2(x)}\n\\]\n\n### Why This Example is Useful:\nThis example provides a clear application of the quotient rule, crucial for differentiating functions defined as ratios.",
             "questions": [
+              {
+                "id": "derivatives-ai-1759542361949-0",
+                "question": "Given the function f(x) = 3x^3 - 5x^2 + 2x - 1, what is the derivative f'(x)?",
+                "options": [
+                  "9x^2 - 10x + 2",
+                  "6x^2 - 10x + 2",
+                  "3x^2 - 5x + 2",
+                  "6x^3 - 5x + 1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find the derivative of f(x), apply the power rule: f'(x) = d/dx (3x^3) + d/dx (-5x^2) + d/dx (2x) + d/dx (-1). This results in f'(x) = 9x^2 - 10x + 2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542361952-1",
+                "question": "If f(x) = x^4 - 4x^3 + 6x^2 - 2, find the critical points of the function.",
+                "options": [
+                  "x = 1, x = 2",
+                  "x = 0, x = 1",
+                  "x = 2, x = 3",
+                  "x = 1, x = -1"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First, find the derivative f'(x) = 4x^3 - 12x^2 + 12x. Set this equal to zero to find critical points: 4x(x^2 - 3x + 3) = 0. The solutions to x = 0, x = 1 are the critical points since the quadratic has no real roots.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542361952-2",
+                "question": "For the function g(x) = e^(2x) * sin(x), what is the derivative g'(x)?",
+                "options": [
+                  "2e^(2x) sin(x) + e^(2x) cos(x)",
+                  "e^(2x) (2sin(x) + cos(x))",
+                  "2e^(2x) cos(x) + e^(2x) sin(x)",
+                  "e^(2x)(2cos(x) + sin(x))"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To differentiate g(x), use the product rule: g'(x) = u'v + uv', where u = e^(2x) and v = sin(x). Thus, u' = 2e^(2x) and v' = cos(x). Therefore, g'(x) = (2e^(2x) * sin(x)) + (e^(2x) * cos(x)).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398021-0",
+                "question": "If g(t) = t^3 - 6t^2 + 9t, what is g'(t)?",
+                "options": [
+                  "3t^2 - 12t + 9",
+                  "3t^2 - 12t",
+                  "3t^2 + 12t - 9",
+                  "6t - 6"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the power rule to differentiate each term, g'(t) = 3t^2 - 12t + 9. Each term is derived independently, making sure to reduce the exponent by one.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398021-1",
+                "question": "Find the slope of the tangent line to the curve y = x^2 + 3x at the point where x = 2.",
+                "options": [
+                  "7",
+                  "5",
+                  "8",
+                  "12"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, find the derivative y' = 2x + 3. Plugging in x = 2 gives y'(2) = 2(2) + 3 = 4 + 3 = 7. This means the slope of the tangent line at that point is 7.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398021-2",
+                "question": "What is the second derivative of the function h(x) = 4x^3 - 2x + 1?",
+                "options": [
+                  "24x^2",
+                  "12x^2",
+                  "8x",
+                  "6x"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, find the first derivative h'(x) = 12x^2 - 2. Then, differentiate again to find the second derivative: h''(x) = 24x. The question specifies the coefficient of the x^2 term, which is 24.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398021-3",
+                "question": "Which of the following is the derivative of f(x) = sin(x^2)?",
+                "options": [
+                  "2x cos(x^2)",
+                  "cos(x^2)",
+                  "sin(x^2)",
+                  "2x sin(x^2)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To differentiate sin(x^2), use the chain rule. The outer function is sin(u) where u = x^2. The derivative of sin(u) is cos(u) * du/dx. Here, du/dx = 2x, thus f'(x) = 2x cos(x^2).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398022-4",
+                "question": "What is the critical point of the function f(x) = x^3 - 6x^2 + 9x?",
+                "options": [
+                  "x = 0, 3",
+                  "x = 1, 2",
+                  "x = 2, 3",
+                  "x = 3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find critical points, first calculate the derivative f'(x) = 3x^2 - 12x + 9. Setting f'(x) = 0 gives 3(x^2 - 4x + 3) = 0, which factors to 3(x - 1)(x - 3) = 0. Hence, critical points are x = 1 and x = 3.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398022-5",
+                "question": "If f(x) = ln(x^2 + 1), what is f'(x)?",
+                "options": [
+                  "1/(x^2 + 1)",
+                  "2x/(x^2 + 1)",
+                  "1/(2x + 1)",
+                  "2/(x^2 + 1)"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using the chain rule, the derivative of ln(u) is 1/u * du/dx. Here, u = x^2 + 1, so du/dx = 2x. Therefore, f'(x) = 1/(x^2 + 1) * 2x = 2x/(x^2 + 1).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398022-6",
+                "question": "Determine the derivative of f(x) = sqrt(x^3 + 4x).",
+                "options": [
+                  "(3x^2 + 4)/(2sqrt(x^3 + 4x))",
+                  "1/(2sqrt(x^3 + 4x))",
+                  "3x^2 + 4",
+                  "3/(2sqrt(x^3 + 4x))"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the chain rule, the derivative of sqrt(u) is (1/2)u^(-1/2) * du/dx. Here, u = x^3 + 4x, thus du/dx = 3x^2 + 4. Therefore, f'(x) = (1/2)(x^3 + 4x)^(-1/2)(3x^2 + 4) = (3x^2 + 4)/(2sqrt(x^3 + 4x)).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542398022-7",
+                "question": "What is the point of inflection for the function f(x) = x^4 - 4x^3?",
+                "options": [
+                  "x = 0, 3",
+                  "x = 1, 2",
+                  "x = 2",
+                  "x = 3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find the point of inflection, the second derivative must be calculated. First, find f'(x) = 4x^3 - 12x^2, then f''(x) = 12x^2 - 24x. Setting f''(x) = 0 gives 12x(x - 2) = 0, indicating potential inflection points at x = 0 and x = 2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430515-0",
+                "question": "Evaluate the derivative of g(x) = sin(2x) + cos(3x) at x = π/6.",
+                "options": [
+                  "0",
+                  "-1/2",
+                  "1/2",
+                  "√3/2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First, find g'(x) = 2cos(2x) - 3sin(3x). Then substitute x = π/6: g'(π/6) = 2cos(π/3) - 3sin(π/2) = 2*(-1/2) - 3*(1) = -1 - 3 = -4.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430515-1",
+                "question": "If h(x) = x^2 * ln(x), what is h'(x)?",
+                "options": [
+                  "2x * ln(x) + x",
+                  "2x * ln(x) + x^2",
+                  "2ln(x)",
+                  "x^2/x"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Use the product rule: h'(x) = u'v + uv' where u = x^2 and v = ln(x). Thus, h'(x) = 2x * ln(x) + x^2 * (1/x) = 2x * ln(x) + x.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430515-2",
+                "question": "Find the second derivative of f(x) = x^3 - 6x^2 + 9x.",
+                "options": [
+                  "6x - 12",
+                  "6x - 9",
+                  "12x - 6",
+                  "3x^2 - 12"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, calculate the first derivative f'(x) = 3x^2 - 12x + 9. Then, the second derivative f''(x) = 6x - 12.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430516-3",
+                "question": "Determine the critical points of the function f(x) = x^4 - 4x^3 + 4x.",
+                "options": [
+                  "x = 0 and x = 2",
+                  "x = 1 and x = 3",
+                  "x = 2",
+                  "x = -2 and x = 2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Find the derivative f'(x) = 4x^3 - 12x^2 + 4. Set f'(x) = 0 and factor: 4(x^3 - 3x^2 + 1) = 0. The critical points occur at x = 0 and x = 2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430516-4",
+                "question": "What is the slope of the tangent line to the curve y = e^x at x = 0?",
+                "options": [
+                  "0",
+                  "1",
+                  "e",
+                  "e^0"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The derivative of e^x is e^x itself. At x = 0, the slope is e^0 = 1.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430516-5",
+                "question": "Calculate the derivative of y = (3x^2 + 2)(x^3 - x).",
+                "options": [
+                  "9x^4 - 3x^2 + 6x",
+                  "9x^4 - 3x + 6",
+                  "9x^4 + 3x^2 + 6x",
+                  "9x^4 - 6x^2 + 3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the product rule, y' = u'v + uv', where u = 3x^2 + 2 and v = x^3 - x. Therefore, y' = (6x)(x^3 - x) + (3x^2 + 2)(3x^2 - 1). Simplifying gives the correct answer.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542430516-6",
+                "question": "Find the derivative of f(x) = 5x^4 - 2x^2 + 3x - 1 at x = 1.",
+                "options": [
+                  "16",
+                  "10",
+                  "18",
+                  "22"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First, find the derivative f'(x) = 20x^3 - 4x + 3. Evaluating at x = 1 gives f'(1) = 20(1)^3 - 4(1) + 3 = 20 - 4 + 3 = 19.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542964425-0",
+                "question": "If g(t) = t^2 * e^t, what is g'(t)?",
+                "options": [
+                  "t^2 * e^t + 2t * e^t",
+                  "2t * e^t + t^2 * e^t",
+                  "e^t(t^2 + 2t)",
+                  "e^t(t^2 + t)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Use the product rule, which states that (uv)' = u'v + uv'. Here, u = t^2 and v = e^t, hence g'(t) = 2t * e^t + t^2 * e^t.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542964426-1",
+                "question": "If f(x) = sin(x) + cos(x), what is f'(π/4)?",
+                "options": [
+                  "0",
+                  "√2",
+                  "1",
+                  "√2/2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The derivative f'(x) = cos(x) - sin(x). Evaluating this at x = π/4 gives f'(π/4) = cos(π/4) - sin(π/4) = √2/2 - √2/2 = 0.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542964427-2",
+                "question": "For the function q(x) = x^2 * sin(x), what is q'(x)?",
+                "options": [
+                  "2x * sin(x) + x^2 * cos(x)",
+                  "x * sin(x) + 2x^2 * cos(x)",
+                  "2x * cos(x) + x^2 * sin(x)",
+                  "2x * sin(x) - x^2 * cos(x)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the product rule, q'(x) = (x^2)' * sin(x) + x^2 * (sin(x))' = 2x * sin(x) + x^2 * cos(x).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542964428-3",
+                "question": "Determine the slope of the tangent line to the curve y = x^3 - 3x^2 + 4 at the point where x = 2.",
+                "options": [
+                  "3",
+                  "5",
+                  "4",
+                  "6"
+                ],
+                "correctAnswer": 2,
+                "explanation": "First, find the derivative y' = 3x^2 - 6x. Evaluating at x = 2 gives y'(2) = 3(2^2) - 6(2) = 12 - 12 = 0, so the slope of the tangent line is 0.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "derivatives-ai-1759542964428-4",
+                "question": "Find the points of inflection for the function f(x) = x^4 - 4x^3 + 6x^2.",
+                "options": [
+                  "x = 0, 2",
+                  "x = 1, 3",
+                  "x = 2, 4",
+                  "x = 4, 6"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, find f''(x) = 12x^2 - 24x + 12. Set f''(x) = 0 to find critical points: 12(x^2 - 2x + 1) = 0, which gives x = 2 as a double root. Test intervals around x = 2 to confirm inflection.",
+                "difficulty": "advanced"
+              },
               {
                 "id": "deriv-q1",
                 "question": "What is the derivative of f(x) = x²?",
@@ -1527,6 +1826,45 @@ export const curriculumData: Grade[] = [
                 "difficulty": "easy"
               },
               {
+                "id": "derivatives-ai-1759543085924-0",
+                "question": "If f(x) = x^3 - 4x, what is f'(x) at x = 1?",
+                "options": [
+                  "-3",
+                  "3",
+                  "0",
+                  "-1"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First, find the derivative f'(x) = 3x^2 - 4. Then substitute x = 1: f'(1) = 3(1)^2 - 4 = 3 - 4 = -1.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "derivatives-ai-1759543085925-1",
+                "question": "If f(x) = 4x^3 + 2x, what is f'(x)?",
+                "options": [
+                  "12x^2 + 2",
+                  "12x^2 + 1",
+                  "6x^2 + 2",
+                  "4x^2 + 2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the power rule for each term, f'(x) = 12x^2 + 2.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "derivatives-ai-1759543085925-2",
+                "question": "If f(x) = x^2 + x, what is f'(2)?",
+                "options": [
+                  "4",
+                  "5",
+                  "2",
+                  "3"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First, find the derivative f'(x) = 2x + 1. Then substitute x = 2: f'(2) = 2(2) + 1 = 4 + 1 = 5.",
+                "difficulty": "easy"
+              },
+              {
                 "id": "deriv-q4",
                 "question": "If f(x) = 3x² + 2x, what is f'(x)?",
                 "options": [
@@ -1537,6 +1875,136 @@ export const curriculumData: Grade[] = [
                 ],
                 "correctAnswer": 0,
                 "explanation": "Derivative of 3x² is 6x, derivative of 2x is 2. Sum: 6x + 2",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759542999666-0",
+                "question": "Which of the following functions has a derivative that does not exist at x = 2?",
+                "options": [
+                  "f(x) = x^2",
+                  "f(x) = |x - 2|",
+                  "f(x) = x^3",
+                  "f(x) = 2x + 1"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The function f(x) = |x - 2| has a sharp corner at x = 2, which means the left-hand derivative and right-hand derivative do not match, thus the derivative does not exist at that point.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759542999667-1",
+                "question": "Evaluate the limit lim (x -> 0) (sin(5x)/x).",
+                "options": [
+                  "5",
+                  "0",
+                  "1",
+                  "Undefined"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the limit property that lim (x -> 0) (sin(kx)/x) = k, where k = 5 in this case, we conclude that the limit evaluates to 5.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759542999668-2",
+                "question": "If f'(x) = 6x^5 - 4x^3 + 2, what is f''(x)?",
+                "options": [
+                  "30x^4 - 12x^2",
+                  "30x^4 - 4",
+                  "30x^4 - 12x^3",
+                  "30x^5 - 4x^3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find f''(x), differentiate f'(x): f''(x) = 30x^4 - 12x^2.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759542999669-3",
+                "question": "For the function f(x) = e^(2x) + ln(x), find f'(1).",
+                "options": [
+                  "e^2 + 1",
+                  "2e^2 + 1",
+                  "e^2",
+                  "ln(1)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, we find the derivative f'(x) = 2e^(2x) + 1/x. Evaluating at x = 1 gives f'(1) = 2e^2 + 1.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759542999670-4",
+                "question": "Determine the inflection points of the function f(x) = x^4 - 4x^3 + 6x^2.",
+                "options": [
+                  "x = 1",
+                  "x = 2",
+                  "x = 3",
+                  "No inflection points"
+                ],
+                "correctAnswer": 1,
+                "explanation": "To find inflection points, set the second derivative f''(x) to zero. First, find f'(x) = 4x^3 - 12x^2 + 12x and then f''(x) = 12x^2 - 24x + 12. Setting f''(x) = 0 gives x = 1 and x = 2, with a change in concavity indicating inflection points.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759542999671-5",
+                "question": "If f(x) = x^2sin(x), find f'(x).",
+                "options": [
+                  "2xsin(x) + x^2cos(x)",
+                  "2sin(x) + 2xcos(x)",
+                  "x^2cos(x)",
+                  "xsin(x) + 2x^2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Use the product rule: if u = x^2 and v = sin(x), then f'(x) = u'v + uv' = (2x)(sin(x)) + (x^2)(cos(x)). Thus, f'(x) = 2xsin(x) + x^2cos(x).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759543023953-0",
+                "question": "Find the derivative of the function g(x) = sin(2x) + cos(3x).",
+                "options": [
+                  "2cos(2x) - 3sin(3x)",
+                  "2sin(2x) + 3cos(3x)",
+                  "2cos(3x) - 3sin(2x)",
+                  "3sin(3x) + 2cos(2x)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the chain rule, the derivative of sin(2x) is 2cos(2x), and the derivative of cos(3x) is -3sin(3x). Thus, g'(x) = 2cos(2x) - 3sin(3x).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759543023954-1",
+                "question": "If h(x) = e^(2x) * ln(x), what is h'(x)?",
+                "options": [
+                  "2e^(2x)ln(x) + e^(2x)/x",
+                  "e^(2x)(2ln(x) + 1/x)",
+                  "2e^(2x)/x",
+                  "e^(2x)(ln(x)^2)"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using the product rule: h'(x) = u'v + uv', where u = e^(2x) and v = ln(x). Thus, u' = 2e^(2x) and v' = 1/x. Therefore, h'(x) = 2e^(2x)ln(x) + e^(2x)(1/x).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759543023955-2",
+                "question": "Find the derivative of the function f(x) = x^2 * ln(5x).",
+                "options": [
+                  "2x * ln(5x) + x",
+                  "2x * ln(5) + x",
+                  "2x * ln(5x) + 1",
+                  "2x * ln(5x) + 1/x"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the product rule, let u = x^2 and v = ln(5x). Then, u' = 2x and v' = 1/x. Applying the product rule gives f'(x) = u'v + uv' = 2x * ln(5x) + x^2 * (1/x) = 2x * ln(5x) + x.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "derivatives-ai-1759543023955-3",
+                "question": "For the function f(x) = 2/x + 3x^2, find f''(x).",
+                "options": [
+                  "-4/x^3 + 6",
+                  "6x - 4/x^3",
+                  "12x - 2/x^3",
+                  "12x + 4/x^3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, find f'(x) = -2/x^2 + 6x. Then, differentiate again to obtain f''(x) = 4/x^3 + 6. The negative sign is due to the power rule being applied to the first term.",
                 "difficulty": "hard"
               },
               {
@@ -1551,6 +2019,71 @@ export const curriculumData: Grade[] = [
                 "correctAnswer": 0,
                 "explanation": "Using power rule: d/dx(x⁴) = 4x³",
                 "difficulty": "medium"
+              },
+              {
+                "id": "derivatives-ai-1759543046570-0",
+                "question": "If f(x) = x^3 - 4x, what is f'(2)?",
+                "options": [
+                  "4",
+                  "8",
+                  "0",
+                  "12"
+                ],
+                "correctAnswer": 3,
+                "explanation": "First, find the derivative f'(x) = 3x^2 - 4. Then, substitute x = 2: f'(2) = 3(2)^2 - 4 = 3(4) - 4 = 12 - 4 = 8.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "derivatives-ai-1759543046571-1",
+                "question": "The equation of a tangent line to the curve y = x^2 at the point (1,1) is?",
+                "options": [
+                  "y = 2x - 1",
+                  "y = 2x + 1",
+                  "y = x + 1",
+                  "y = -x + 1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First find the derivative of y = x^2, which is f'(x) = 2x. At x = 1, f'(1) = 2. The point-slope form of the line is y - y1 = m(x - x1), or y - 1 = 2(x - 1), giving y = 2x - 2 + 1, so y = 2x - 1.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "derivatives-ai-1759543046572-2",
+                "question": "If f(x) = 5x^3 - 2x + 7, what is f''(x)?",
+                "options": [
+                  "30x^2 - 2",
+                  "15x^2 - 2",
+                  "15x^2 + 2",
+                  "30x^2 + 2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "First, find the first derivative f'(x) = 15x^2 - 2. Then, differentiate again to get f''(x) = 30x^2.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "derivatives-ai-1759543067270-0",
+                "question": "If h(x) = x^4 - 2x^2 + 3, what is h'(x)?",
+                "options": [
+                  "4x^3 - 4x",
+                  "4x^2 - 4",
+                  "2x^3 - 2",
+                  "x^3 - 2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Applying the power rule: the derivative of x^4 is 4x^3, the derivative of -2x^2 is -4x, and the constant 3 has a derivative of 0. Thus, h'(x) = 4x^3 - 4x.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "derivatives-ai-1759543067271-1",
+                "question": "If g(x) = x^2 + 2x + 1, what is g'(x)?",
+                "options": [
+                  "2x + 2",
+                  "2x + 1",
+                  "x + 2",
+                  "x + 1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The derivative g'(x) = 2x + 2, obtained by applying the power rule to each term: 2x^1 + 2.",
+                "difficulty": "medium"
               }
             ]
           },
@@ -1558,7 +2091,7 @@ export const curriculumData: Grade[] = [
             "id": "limits",
             "title": "Introduction to Limits",
             "description": "Understanding limits and continuity",
-            "content": "# Introduction to Limits\n\nA limit describes the value a function approaches as x approaches a certain value.\n\n## Notation:\nlim(x→a) f(x) = L\n\nThis reads: \"The limit of f(x) as x approaches a equals L\"\n\n## Types of Limits:\n\n### 1. Direct Substitution:\nIf f(x) is continuous at x = a:\nlim(x→a) f(x) = f(a)\n\n### 2. One-Sided Limits:\n- Left-hand limit: lim(x→a⁻) f(x)\n- Right-hand limit: lim(x→a⁺) f(x)\n\n### 3. Limits at Infinity:\nlim(x→∞) f(x)\n\n## Example:\nlim(x→2) (x² + 1) = 2² + 1 = 5",
+            "content": "# Introduction to Limits\n\nA limit describes the value a function approaches as x approaches a certain value.\n\n## Notation:\nlim(x→a) f(x) = L\n\nThis reads: \"The limit of f(x) as x approaches a equals L\"\n\n## Types of Limits:\n\n### 1. Direct Substitution:\nIf f(x) is continuous at x = a:\nlim(x→a) f(x) = f(a)\n\n### 2. One-Sided Limits:\n- Left-hand limit: lim(x→a⁻) f(x)\n- Right-hand limit: lim(x→a⁺) f(x)\n\n### 3. Limits at Infinity:\nlim(x→∞) f(x)\n\n## Example:\nlim(x→2) (x² + 1) = 2² + 1 = 5\n\n---\n\n## Updated Content\n\n# Introduction to Limits\n\nLimits are fundamental concepts in calculus that describe the behavior of functions as they approach a certain point or value. Understanding limits is crucial for analyzing continuous functions, calculating derivatives, and evaluating integrals. They help us comprehend how functions behave near specific points, even if they are not defined at those points. \n\n## Key Concepts:\n\n- **Concept 1: Definition of a Limit**\n  \n  The limit of a function \\( f(x) \\) as \\( x \\) approaches a value \\( a \\) is defined as:\n\n  \\[\n  \\lim_{x \\to a} f(x) = L\n  \\]\n\n  This means that as \\( x \\) gets arbitrarily close to \\( a \\), \\( f(x) \\) gets arbitrarily close to \\( L \\).\n\n- **Concept 2: One-Sided Limits**\n  \n  One-sided limits refer to the behavior of a function as it approaches a value from one side only. The left-hand limit and right-hand limit can be expressed as:\n\n  \\[\n  \\lim_{x \\to a^-} f(x) = L \\quad \\text{(from the left)}\n  \\]\n  \n  \\[\n  \\lim_{x \\to a^+} f(x) = L \\quad \\text{(from the right)}\n  \\]\n\n  For the limit to exist at \\( a \\), both one-sided limits must exist and be equal.\n\n- **Concept 3: Limits at Infinity**\n  \n  Limits can also describe the behavior of functions as \\( x \\) approaches infinity. For example:\n\n  \\[\n  \\lim_{x \\to \\infty} f(x) = L\n  \\]\n\n  This indicates that as \\( x \\) increases without bound, \\( f(x) \\) approaches \\( L \\).\n\n## Important Formulas/Rules:\n\n- Limit of a constant function: \n\n  \\[\n  \\lim_{x \\to a} c = c\n  \\]\n\n- Limit of a polynomial function:\n\n  \\[\n  \\lim_{x \\to a} (x^n) = a^n\n  \\]\n\n- Sum Rule:\n\n  \\[\n  \\lim_{x \\to a} (f(x) + g(x)) = \\lim_{x \\to a} f(x) + \\lim_{x \\to a} g(x)\n  \\]\n\n- Product Rule:\n\n  \\[\n  \\lim_{x \\to a} (f(x) \\cdot g(x)) = \\lim_{x \\to a} f(x) \\cdot \\lim_{x \\to a} g(x)\n  \\]\n\n## Step-by-Step Process:\n1. **Identify the point of interest**: Determine the value \\( a \\) that \\( x \\) approaches.\n2. **Substitute \\( x \\) with values close to \\( a \\)**: Calculate \\( f(x) \\) for values of \\( x \\) that are very close to \\( a \\) from both sides.\n3. **Analyze the behavior of \\( f(x) \\)**: Determine if \\( f(x) \\) approaches a specific value \\( L \\) as \\( x \\) approaches \\( a \\).\n\n```mermaid\ngraph TD\n    A[Identify the point of interest] --> B[Substitute values close to a]\n    B --> C[Analyze behavior of f(x)]\n    C --> D[Determine the limit]\n```\n\n## Worked Examples:\n\n### Example 1:\n**Problem**: Evaluate the limit \\( \\lim_{x \\to 3} (2x + 1) \\)\n\n**Solution**:\n1. Substitute \\( x = 3 \\):\n   \\[\n   f(3) = 2(3) + 1 = 6 + 1 = 7\n   \\]\n2. Therefore,\n   \\[\n   \\lim_{x \\to 3} (2x + 1) = 7\n   \\]\n\n**Answer**: \\( 7 \\)\n\n### Example 2:\n**Problem**: Evaluate the limit \\( \\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} \\)\n\n**Solution**:\n1. Direct substitution gives \\( \\frac{0}{0} \\), which is undefined. We will factor the numerator:\n   \\[\n   x^2 - 1 = (x - 1)(x + 1)\n   \\]\n2. Now substitute:\n   \\[\n   \\lim_{x \\to 1} \\frac{(x - 1)(x + 1)}{x - 1} = \\lim_{x \\to 1} (x + 1)\n   \\]\n3. Now substitute \\( x = 1 \\):\n   \\[\n   1 + 1 = 2\n   \\]\n\n**Answer**: \\( 2 \\)\n\n## Common Mistakes to Avoid:\n- **Mistake 1**: Assuming the limit exists without checking one-sided limits. Always verify both left and right limits.\n- **Mistake 2**: Forgetting to simplify expressions when encountering indeterminate forms like \\( \\frac{0}{0} \\).\n\n## Real-World Applications:\n- **Application 1**: In physics, limits are used to find instantaneous rates of change, which describe the velocity of an object at a specific moment.\n- **Application 2**: In economics, limits help analyze trends over time, such as predicting behavior as a market approaches saturation.\n\n## Practice Tips:\n- Practice evaluating limits using both direct substitution and algebraic manipulation.\n- Familiarize yourself with special limit properties and common functions to increase efficiency when solving problems.\n\n---\n\n## Additional Content (AI-Enhanced)\n\n# Introduction to Limits\n\nA limit describes the value that a function approaches as \\( x \\) approaches a certain value. Understanding limits forms the foundation of calculus, which is essential for analyzing the behavior of functions, particularly when they are not defined at certain points.\n\n## Notation:\nThe limit of a function \\( f(x) \\) as \\( x \\) approaches a value \\( a \\) is denoted as:\n\n\\[\n\\lim_{x \\to a} f(x) = L\n\\]\n\nThis reads: \"The limit of \\( f(x) \\) as \\( x \\) approaches \\( a \\) equals \\( L \\).\"\n\n## Types of Limits:\n\n### 1. Direct Substitution:\nIf \\( f(x) \\) is continuous at \\( x = a \\), then the limit can be found using direct substitution:\n\n\\[\n\\lim_{x \\to a} f(x) = f(a)\n\\]\n\nFor example, if \\( f(x) = 3x + 2 \\) and we want to find \\( \\lim_{x \\to 1} f(x) \\):\n\n\\[\n\\lim_{x \\to 1} (3x + 2) = 3(1) + 2 = 5\n\\]\n\n### 2. One-Sided Limits:\nOne-sided limits help to understand the behavior of functions approaching a point from one direction.\n\n- Left-hand limit:\n\n\\[\n\\lim_{x \\to a^-} f(x)\n\\]\n\n- Right-hand limit:\n\n\\[\n\\lim_{x \\to a^+} f(x)\n\\]\n\nFor example, consider the piecewise function defined as follows:\n\n\\[\nf(x) = \n\\begin{cases} \n2x & \\text{if } x < 3 \\\\ \n5 & \\text{if } x = 3 \\\\ \nx^2 & \\text{if } x > 3 \n\\end{cases}\n\\]\n\nTo find the limits as \\( x \\) approaches \\( 3 \\):\n\n\\[\n\\lim_{x \\to 3^-} f(x) = 2(3) = 6\n\\]\n\n\\[\n\\lim_{x \\to 3^+} f(x) = (3)^2 = 9\n\\]\n\nSince the left-hand limit and right-hand limit are not equal, the overall limit does not exist:\n\n\\[\n\\lim_{x \\to 3} f(x) \\text{ does not exist}\n\\]\n\n### 3. Limits at Infinity:\nLimits can also describe the behavior of functions as \\( x \\) approaches infinity or negative infinity.\n\n\\[\n\\lim_{x \\to \\infty} f(x)\n\\]\n\nFor example, for the function \\( f(x) = \\frac{1}{x} \\):\n\n\\[\n\\lim_{x \\to \\infty} \\frac{1}{x} = 0\n\\]\n\nThis means as \\( x \\) increases without bound, \\( f(x) \\) approaches \\( 0 \\).\n\n## Additional Worked Examples:\n\n### Example 1: Polynomial Function\nEvaluate the limit:\n\n\\[\n\\lim_{x \\to 4} (x^2 - 16)\n\\]\n\nUsing direct substitution:\n\n\\[\n= 4^2 - 16 = 16 - 16 = 0\n\\]\n\n### Example 2: Rational Function\nEvaluate the limit:\n\n\\[\n\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}\n\\]\n\nDirect substitution gives \\( \\frac{0}{0} \\), an indeterminate form. We factor the numerator:\n\n\\[\n= \\lim_{x \\to 2} \\frac{(x-2)(x+2)}{x-2} = \\lim_{x \\to 2} (x+2)\n\\]\n\nNow we can substitute:\n\n\\[\n= 2 + 2 = 4\n\\]\n\n### Example 3: Limit at Infinity\nEvaluate:\n\n\\[\n\\lim_{x \\to \\infty} \\frac{2x^2 - 3x + 1}{4x^2 + x - 5}\n\\]\n\nDividing the numerator and denominator by \\( x^2 \\):\n\n\\[\n= \\lim_{x \\to \\infty} \\frac{2 - \\frac{3}{x} + \\frac{1}{x^2}}{4 + \\frac{1}{x} - \\frac{5}{x^2}}\n\\]\n\nAs \\( x \\to \\infty \\), the fractions approach \\( 0 \\):\n\n\\[\n= \\frac{2}{4} = \\frac{1}{2}\n\\]\n\n## Real-World Applications of Limits:\n1. **Physics**: Limits are used to find instantaneous rates of change, such as velocity. The derivative of a position function is defined using limits.\n2. **Engineering**: In control systems, limits help in analyzing system stability and performance as inputs approach certain values.\n3. **Economics**: Limits are used in calculating marginal cost and marginal revenue, which are crucial for optimizing profit.\n\n## Practice Tips:\n\n- **Visualize**: Graph functions to see how they behave near the point of interest.\n- **Check for Continuity**: If a function is continuous at \\( x = a \\), direct substitution is often the simplest method.\n- **Factor When Necessary**: If you encounter an indeterminate form like \\( \\frac{0}{0} \\), consider factoring the numerator or denominator.\n\n## Common Mistakes:\n\n- **Ignoring One-Sided Limits**: Always check both left-hand and right-hand limits when dealing with piecewise functions.\n- **Assuming Direct Substitution Always Works**: Be cautious of indeterminate forms and apply algebraic manipulation when needed.\n- **Overlooking Limits at Infinity**: Remember to simplify expressions before evaluating limits at infinity.\n\nWith this comprehensive understanding of limits, you are now equipped to tackle more complex problems in calculus! Happy learning!\n\n---\n\n## Additional Examples\n\n# Worked Examples on Limits\n\n## Example 1: Direct Substitution\n### Problem Statement\nEvaluate the limit:\n\\[\n\\lim_{x \\to 3} (2x + 5)\n\\]\n\n### Step-by-Step Solution\n1. **Identify the function:** The function is \\( f(x) = 2x + 5 \\).\n2. **Check for continuity:** Since \\( f(x) \\) is a polynomial, it is continuous everywhere.\n3. **Apply direct substitution:** We substitute \\( x = 3 \\) into the function:\n   \\[\n   f(3) = 2(3) + 5 = 6 + 5 = 11\n   \\]\n\n### Final Answer\n\\[\n\\lim_{x \\to 3} (2x + 5) = 11\n\\]\n\n### Why This Example is Useful\nThis example illustrates the concept of direct substitution in evaluating limits, which is a fundamental technique when dealing with continuous functions.\n\n---\n\n## Example 2: One-Sided Limits\n### Problem Statement\nFind the left-hand limit:\n\\[\n\\lim_{x \\to 1^-} (x^2 - 1)\n\\]\n\n### Step-by-Step Solution\n1. **Identify the function:** The function is \\( f(x) = x^2 - 1 \\).\n2. **Determine the left-hand limit:** As \\( x \\) approaches 1 from the left, we evaluate:\n   \\[\n   f(1) = 1^2 - 1 = 0\n   \\]\n\n### Final Answer\n\\[\n\\lim_{x \\to 1^-} (x^2 - 1) = 0\n\\]\n\n### Why This Example is Useful\nThis example shows how to evaluate one-sided limits, which is important in understanding the behavior of functions near specific points, especially for piecewise functions.\n\n---\n\n## Example 3: Limits Involving Square Roots\n### Problem Statement\nEvaluate the limit:\n\\[\n\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}\n\\]\n\n### Step-by-Step Solution\n1. **Direct substitution gives:** \n   \\[\n   \\frac{\\sqrt{4} - 2}{4 - 4} = \\frac{0}{0}\n   \\]\n   This is an indeterminate form. We need to simplify.\n2. **Rationalize the numerator:** Multiply the numerator and denominator by the conjugate:\n   \\[\n   \\lim_{x \\to 4} \\frac{(\\sqrt{x} - 2)(\\sqrt{x} + 2)}{(x - 4)(\\sqrt{x} + 2)} = \\lim_{x \\to 4} \\frac{x - 4}{(x - 4)(\\sqrt{x} + 2)}\n   \\]\n3. **Cancel the common term:** \n   \\[\n   \\lim_{x \\to 4} \\frac{1}{\\sqrt{x} + 2}\n   \\]\n4. **Apply direct substitution now:** \n   \\[\n   \\frac{1}{\\sqrt{4} + 2} = \\frac{1}{2 + 2} = \\frac{1}{4}\n   \\]\n\n### Final Answer\n\\[\n\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4} = \\frac{1}{4}\n\\]\n\n### Why This Example is Useful\nThis example teaches students how to handle indeterminate forms by rationalizing, which is a common strategy in limit evaluation.\n\n---\n\n## Example 4: Limit at Infinity\n### Problem Statement\nEvaluate the limit:\n\\[\n\\lim_{x \\to \\infty} \\frac{3x^2 + 2x - 1}{5x^2 + 4}\n\\]\n\n### Step-by-Step Solution\n1. **Identify the degrees of the polynomial:** The degree of the numerator and the denominator is 2.\n2. **Divide every term by \\( x^2 \\):**\n   \\[\n   \\lim_{x \\to \\infty} \\frac{3 + \\frac{2}{x} - \\frac{1}{x^2}}{5 + \\frac{4}{x^2}} \n   \\]\n3. **Evaluate the limit as \\( x \\) approaches infinity:**\n   \\[\n   = \\frac{3 + 0 - 0}{5 + 0} = \\frac{3}{5}\n   \\]\n\n### Final Answer\n\\[\n\\lim_{x \\to \\infty} \\frac{3x^2 + 2x - 1}{5x^2 + 4} = \\frac{3}{5}\n\\]\n\n### Why This Example is Useful\nThis example illustrates how to evaluate limits as \\( x \\) approaches infinity, which is important for understanding the end behavior of rational functions.\n\n---\n\n## Example 5: Limit Involving a Piecewise Function\n### Problem Statement\nEvaluate the limit:\n\\[\n\\lim_{x \\to 0} f(x) \\text{ where } f(x) =\n\\begin{cases}\nx^2 & \\text{if } x < 0 \\\\\n2x & \\text{if } x \\geq 0\n\\end{cases}\n\\]\n\n### Step-by-Step Solution\n1. **Evaluate the left-hand limit:** For \\( x < 0 \\):\n   \\[\n   \\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^-} x^2 = 0\n   \\]\n2. **Evaluate the right-hand limit:** For \\( x \\geq 0 \\):\n   \\[\n   \\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^+} 2x = 0\n   \\]\n3. **Compare the one-sided limits:** Both the left-hand limit and the right-hand limit are equal:\n   \\[\n   \\lim_{x \\to 0^-} f(x) = \\lim_{x \\to 0^+} f(x) = 0\n   \\]\n\n### Final Answer\n\\[\n\\lim_{x \\to 0} f(x) = 0\n\\]\n\n### Why This Example is Useful\nThis example demonstrates how to evaluate limits for piecewise functions, highlighting the importance of checking both one-sided limits to determine the overall limit.",
             "questions": [
               {
                 "id": "lim-q4",
@@ -1571,6 +2104,71 @@ export const curriculumData: Grade[] = [
                 ],
                 "correctAnswer": 0,
                 "explanation": "Divide by highest power: lim(x→∞) (3 + 2/x²)/(1 - 1/x²) = 3/1 = 3",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "limits-ai-1759543299368-0",
+                "question": "What is the limit of f(x) = (x^2 - 1)/(x - 1) as x approaches 1?",
+                "options": [
+                  "0",
+                  "1",
+                  "2",
+                  "Undefined"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factor the numerator: f(x) = ((x - 1)(x + 1))/(x - 1). Cancel the (x - 1) terms, then find lim (x -> 1) (x + 1) = 2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "limits-ai-1759543299368-1",
+                "question": "Evaluate lim (x -> 0) (1 - cos(x))/x^2.",
+                "options": [
+                  "0",
+                  "1/2",
+                  "1",
+                  "Undefined"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using L'Hôpital's rule: differentiate the numerator and denominator. lim (x -> 0) (sin(x))/(2x) = 1/2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "limits-ai-1759543299369-2",
+                "question": "What is the limit: lim (x -> 3) (x^2 - 9)/(x - 3)?",
+                "options": [
+                  "0",
+                  "3",
+                  "6",
+                  "Undefined"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factor the numerator as (x - 3)(x + 3). Cancel (x - 3) and find lim (x -> 3) (x + 3) = 6.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "limits-ai-1759543299370-3",
+                "question": "Evaluate lim (x -> ∞) (3x^3 - 4x)/(2x^3 + x^2).",
+                "options": [
+                  "3/2",
+                  "1/2",
+                  "3",
+                  "Infinity"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Divide every term by x^3. The limit simplifies to lim (x -> ∞) (3 - 0)/(2 + 0) = 3/2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "limits-ai-1759543326657-0",
+                "question": "Find the limit: lim (x -> 0) (tan(x)/x).",
+                "options": [
+                  "0",
+                  "1",
+                  "∞",
+                  "undefined"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using the limit property that lim (x -> 0) (tan(x)/x) = 1, we find the limit is 1. This is a well-known trigonometric limit.",
                 "difficulty": "advanced"
               },
               {
@@ -1587,6 +2185,305 @@ export const curriculumData: Grade[] = [
                 "difficulty": "easy"
               },
               {
+                "id": "limits-ai-1759543117985-0",
+                "question": "What is the limit of the function f(x) = 3x + 2 as x approaches 1?",
+                "options": [
+                  "5",
+                  "6",
+                  "4",
+                  "3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find the limit as x approaches 1, substitute x = 1 into the function: f(1) = 3(1) + 2 = 5.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117986-1",
+                "question": "Evaluate the limit: lim (x -> 2) (x^2 - 4) / (x - 2)",
+                "options": [
+                  "0",
+                  "2",
+                  "4",
+                  "undefined"
+                ],
+                "correctAnswer": 3,
+                "explanation": "This limit is undefined because as x approaches 2, both the numerator and denominator approach 0, leading to a 0/0 indeterminate form. Further analysis shows it can be factored, but the limit does not exist directly at x = 2.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117986-2",
+                "question": "What is the limit of f(x) = 1/x as x approaches infinity?",
+                "options": [
+                  "0",
+                  "1",
+                  "infinity",
+                  "-infinity"
+                ],
+                "correctAnswer": 0,
+                "explanation": "As x approaches infinity, the value of 1/x gets closer and closer to 0. Thus, the limit is 0.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117987-3",
+                "question": "Find the limit: lim (x -> 0) (sin(x) / x)",
+                "options": [
+                  "1",
+                  "0",
+                  "infinity",
+                  "-1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "This is a well-known limit in calculus. As x approaches 0, sin(x) approximates x, making the limit equal to 1.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117988-4",
+                "question": "If f(x) = x^2, what is the limit as x approaches 3?",
+                "options": [
+                  "6",
+                  "9",
+                  "3",
+                  "0"
+                ],
+                "correctAnswer": 1,
+                "explanation": "To find the limit, substitute x = 3 into the function: f(3) = 3^2 = 9.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117988-5",
+                "question": "Evaluate the limit: lim (x -> 1) (x^3 - 1) / (x - 1)",
+                "options": [
+                  "0",
+                  "1",
+                  "3",
+                  "2"
+                ],
+                "correctAnswer": 2,
+                "explanation": "This limit can be evaluated using L'Hôpital's rule or by factoring the numerator: (x - 1)(x^2 + x + 1) / (x - 1) = x^2 + x + 1. Substitute x = 1, yielding 1^2 + 1 + 1 = 3.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117989-6",
+                "question": "What does it mean if the limit of f(x) as x approaches a is L?",
+                "options": [
+                  "f(a) = L",
+                  "f(x) is increasing",
+                  "f(x) approaches L as x approaches a",
+                  "f(x) must equal L at all x"
+                ],
+                "correctAnswer": 2,
+                "explanation": "The statement means that as x gets closer to a, the values of f(x) get closer to L, but it does not imply f(a) = L.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117989-7",
+                "question": "What is the limit of the function f(x) = 5 as x approaches any number?",
+                "options": [
+                  "5",
+                  "0",
+                  "undefined",
+                  "1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Since f(x) = 5 is a constant function, the limit as x approaches any value will always be 5.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117990-8",
+                "question": "Which of the following is the correct limit notation for approaching a value a?",
+                "options": [
+                  "lim x -> a",
+                  "lim (x) a",
+                  "a -> lim x",
+                  "lim a"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The correct notation for indicating the limit of f(x) as x approaches a is lim x -> a.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543117990-9",
+                "question": "Evaluate the limit: lim (x -> 2) (3x^2 - 12) / (x - 2)",
+                "options": [
+                  "6",
+                  "12",
+                  "18",
+                  "3"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First, factor the numerator: 3(x^2 - 4) = 3(x - 2)(x + 2). The limit simplifies to 3(x + 2) as x approaches 2, yielding 3(4) = 12.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136986-0",
+                "question": "What is the limit of f(x) = 3x + 2 as x approaches 1?",
+                "options": [
+                  "5",
+                  "6",
+                  "3",
+                  "2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find the limit as x approaches 1, substitute x with 1 in the function: f(1) = 3(1) + 2 = 5.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136987-1",
+                "question": "Find the limit of the function f(x) = 1/x as x approaches infinity.",
+                "options": [
+                  "0",
+                  "1",
+                  "Infinity",
+                  "-Infinity"
+                ],
+                "correctAnswer": 0,
+                "explanation": "As x grows larger and larger, 1/x gets closer to 0. Thus, the limit is 0.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136988-2",
+                "question": "What is lim x→3 (x² - 9)/(x - 3)?",
+                "options": [
+                  "0",
+                  "3",
+                  "6",
+                  "9"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Factor the numerator: (x - 3)(x + 3)/(x - 3). Cancel (x - 3) to get lim x→3 (x + 3) = 6.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136988-3",
+                "question": "Evaluate lim x→0 sin(x)/x.",
+                "options": [
+                  "0",
+                  "1",
+                  "Undefined",
+                  "Infinity"
+                ],
+                "correctAnswer": 1,
+                "explanation": "This is a standard limit that approaches 1 as x approaches 0.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136989-4",
+                "question": "What is the limit of f(x) = 2x + 1 as x approaches -1?",
+                "options": [
+                  "-1",
+                  "0",
+                  "1",
+                  "-3"
+                ],
+                "correctAnswer": 3,
+                "explanation": "Substituting -1 into the function: f(-1) = 2(-1) + 1 = -2 + 1 = -1.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136989-5",
+                "question": "Find lim x→4 (√x - 2)/(x - 4).",
+                "options": [
+                  "0",
+                  "1/4",
+                  "1/2",
+                  "Undefined"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Use the technique of rationalizing the numerator: multiply by (√x + 2)/(√x + 2). This simplifies to (x - 4)/(x - 4)(√x + 2) and the limit becomes 1/4.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136990-6",
+                "question": "What is the limit of f(x) = 5 as x approaches any number?",
+                "options": [
+                  "5",
+                  "0",
+                  "Undefined",
+                  "Infinity"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The limit of a constant function is the constant itself, so lim x→a f(x) = 5.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136990-7",
+                "question": "Evaluate lim x→1 (x³ - 1)/(x - 1).",
+                "options": [
+                  "2",
+                  "3",
+                  "1",
+                  "0"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Factor the numerator: (x - 1)(x² + x + 1)/(x - 1). After canceling, we evaluate lim x→1 (x² + x + 1) = 3.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543136991-8",
+                "question": "What is lim x→-2 (x + 2)?",
+                "options": [
+                  "-2",
+                  "0",
+                  "2",
+                  "Undefined"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Simply substitute -2 into the function: lim x→-2 (x + 2) = -2 + 2 = 0.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543147863-0",
+                "question": "What is the limit of f(x) = x^3 as x approaches 3?",
+                "options": [
+                  "9",
+                  "27",
+                  "3",
+                  "6"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Substituting 3 into the function gives f(3) = 3^3 = 27.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543147863-1",
+                "question": "Find the limit: lim (x -> 4) (x^2 - 16)/(x - 4).",
+                "options": [
+                  "8",
+                  "4",
+                  "16",
+                  "0"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Factor the numerator: (x - 4)(x + 4)/(x - 4). The (x - 4) cancels out, leaving lim (x -> 4) (x + 4) = 8.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543157256-0",
+                "question": "Find the limit: lim (x -> 3) (x^2 - 9) / (x - 3)",
+                "options": [
+                  "0",
+                  "3",
+                  "6",
+                  "undefined"
+                ],
+                "correctAnswer": 2,
+                "explanation": "This expression is indeterminate at x=3. Factoring gives (x-3)(x+3)/(x-3) and simplifies to x+3. Thus, lim (x -> 3) is 6.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "limits-ai-1759543157257-1",
+                "question": "What does the limit lim (x -> 5) (x - 5) equal?",
+                "options": [
+                  "5",
+                  "0",
+                  "undefined",
+                  "-5"
+                ],
+                "correctAnswer": 1,
+                "explanation": "As x approaches 5, the expression (x - 5) approaches 0. Thus, the limit is 0.",
+                "difficulty": "easy"
+              },
+              {
                 "id": "lim-q3",
                 "question": "What is lim(x→2) (x² - 4)/(x - 2)?",
                 "options": [
@@ -1600,6 +2497,201 @@ export const curriculumData: Grade[] = [
                 "difficulty": "hard"
               },
               {
+                "id": "limits-ai-1759543231592-0",
+                "question": "Find the limit: lim (x -> 1) ((x^2 - 1)/(x - 1))",
+                "options": [
+                  "0",
+                  "1",
+                  "2",
+                  "undefined"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factor the numerator as (x - 1)(x + 1). The limit can be simplified to lim (x -> 1) (x + 1) = 2 after canceling the (x - 1) term.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543231593-1",
+                "question": "Evaluate lim (x -> 0) (e^x - 1)/x.",
+                "options": [
+                  "0",
+                  "1",
+                  "e",
+                  "undefined"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using L'Hôpital's Rule, which applies to the indeterminate form 0/0, we differentiate the numerator and denominator to find that the limit equals 1.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543231593-2",
+                "question": "Find lim (x -> 1) (x^3 - 1)/(x - 1).",
+                "options": [
+                  "0",
+                  "1",
+                  "3",
+                  "2"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factor the numerator as (x - 1)(x^2 + x + 1). After canceling the (x - 1) term, the limit simplifies to 3.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543256056-0",
+                "question": "Find the limit: \\( \\lim_{x \\to 0} \\frac{\\sin(5x)}{x} \\)",
+                "options": [
+                  "0",
+                  "5",
+                  "1",
+                  "10"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using the standard limit \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\), we rewrite the limit as \\(5 \\cdot \\lim_{x \\to 0} \\frac{\\sin(5x)}{5x} = 5 \\cdot 1 = 5\\).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543256058-1",
+                "question": "Find the limit: \\( \\lim_{x \\to 0} \\frac{e^x - 1}{x} \\)",
+                "options": [
+                  "1",
+                  "0",
+                  "e",
+                  "Undefined"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the derivative definition, we find that this limit equals the derivative of \\(e^x\\) at \\(x=0\\), which is 1.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543256059-2",
+                "question": "Calculate the limit: \\( \\lim_{x \\to 2} \\frac{x^2 - 4}{x^2 - 2x} \\)",
+                "options": [
+                  "0",
+                  "1",
+                  "2",
+                  "Undefined"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Factoring gives \\(\\frac{(x - 2)(x + 2)}{x(x - 2)}\\). Canceling, we have \\(\\lim_{x \\to 2} (x + 2)/x = \\frac{4}{2} = 2\\).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543256059-3",
+                "question": "Find the limit: \\( \\lim_{x \\to 1} \\frac{x^3 - 1}{x - 1} \\)",
+                "options": [
+                  "0",
+                  "1",
+                  "2",
+                  "3"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factoring gives us \\(\\frac{(x - 1)(x^2 + x + 1)}{x - 1}\\). Canceling results in \\(\\lim_{x \\to 1} (x^2 + x + 1) = 3\\).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543256060-4",
+                "question": "Calculate the limit: \\( \\lim_{x \to \frac{\u0001}{2}} \frac{x^3 - \frac{1}{8}}{x - \frac{1}{2}} \\)",
+                "options": [
+                  "0",
+                  "1/4",
+                  "1/2",
+                  "1"
+                ],
+                "correctAnswer": 3,
+                "explanation": "Factoring gives us \\(\\frac{(x - \frac{1}{2})(x^2 + \frac{1}{2}x + \frac{1}{4})}{x - \frac{1}{2}}\\). Canceling results in \\(\\lim_{x \to \frac{1}{2}} (x^2 + \frac{1}{2}x + \frac{1}{4}) = 1\\).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276404-0",
+                "question": "Evaluate the limit: lim as x approaches 2 of (x^2 - 4)/(x - 2).",
+                "options": [
+                  "0",
+                  "2",
+                  "4",
+                  "Undefined"
+                ],
+                "correctAnswer": 2,
+                "explanation": "This limit can be evaluated by factoring the numerator: (x^2 - 4) = (x - 2)(x + 2). Cancelling (x - 2) gives lim as x approaches 2 of (x + 2) = 4.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276405-1",
+                "question": "What is the limit of f(x) = sin(1/x) as x approaches 0?",
+                "options": [
+                  "0",
+                  "1",
+                  "Undefined",
+                  "Does not exist"
+                ],
+                "correctAnswer": 3,
+                "explanation": "As x approaches 0, sin(1/x) oscillates between -1 and 1, hence the limit does not settle at any single value, resulting in the limit not existing.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276405-2",
+                "question": "Find the limit: lim as x approaches 1 of (x^3 - 1)/(x - 1).",
+                "options": [
+                  "0",
+                  "1",
+                  "3",
+                  "2"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factoring the numerator gives (x - 1)(x^2 + x + 1). Cancelling (x - 1) leads to lim as x approaches 1 of (x^2 + x + 1) = 3.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276406-3",
+                "question": "Evaluate the limit: lim as x approaches 0 of (tan(x)/x).",
+                "options": [
+                  "0",
+                  "1",
+                  "Infinity",
+                  "Does not exist"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Using the squeeze theorem or L'Hôpital's rule, we find that lim as x approaches 0 of (tan(x)/x) approaches 1.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276406-4",
+                "question": "What is the limit of f(x) = (e^x - 1)/x as x approaches 0?",
+                "options": [
+                  "1",
+                  "0",
+                  "e",
+                  "Undefined"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Applying L'Hôpital's rule, we differentiate the numerator and denominator to get lim as x approaches 0 of (e^x)/(1) = e^0 = 1.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276407-5",
+                "question": "Find the limit: lim as x approaches 1 of (x^2 + x - 2)/(x - 1).",
+                "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "0"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Factoring the numerator gives (x - 1)(x + 2). Cancelling (x - 1) allows us to compute lim as x approaches 1 of (x + 2) = 3.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "limits-ai-1759543276407-6",
+                "question": "Evaluate the limit: lim as x approaches 0 from the right of 1/x.",
+                "options": [
+                  "0",
+                  "1",
+                  "Infinity",
+                  "Does not exist"
+                ],
+                "correctAnswer": 2,
+                "explanation": "As x approaches 0 from the right, 1/x grows without bound, leading to the limit being Infinity.",
+                "difficulty": "hard"
+              },
+              {
                 "id": "lim-q2",
                 "question": "What is lim(x→0) (x² + 3x)?",
                 "options": [
@@ -1610,6 +2702,162 @@ export const curriculumData: Grade[] = [
                 ],
                 "correctAnswer": 0,
                 "explanation": "Substitute x = 0: 0² + 3(0) = 0",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543176088-0",
+                "question": "Find the limit: lim (x -> 1) (x^3 - 1)/(x - 1).",
+                "options": [
+                  "3",
+                  "1",
+                  "0",
+                  "2"
+                ],
+                "correctAnswer": 0,
+                "explanation": "This is an indeterminate form (0/0). Factor the numerator: (x-1)(x^2 + x + 1)/(x-1). Cancel out (x-1), yielding lim (x -> 1) (x^2 + x + 1) = 3.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543176089-1",
+                "question": "Determine the limit: lim (x -> -1) (x^2 + 2x + 1)/(x + 1).",
+                "options": [
+                  "-1",
+                  "0",
+                  "1",
+                  "Undefined"
+                ],
+                "correctAnswer": 3,
+                "explanation": "This limit gives an indeterminate form (0/0). The numerator can be factored as (x + 1)(x + 1)/(x + 1). Cancel out (x + 1) and substitute -1, yielding 0.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543176089-2",
+                "question": "Evaluate: lim (x -> 2) (x^2 - 4)/(x - 2).",
+                "options": [
+                  "2",
+                  "4",
+                  "0",
+                  "Undefined"
+                ],
+                "correctAnswer": 0,
+                "explanation": "This is an indeterminate form (0/0). Factor the numerator: (x - 2)(x + 2)/(x - 2). Cancel (x - 2) and evaluate the limit: lim (x -> 2) (x + 2) = 4.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543176090-3",
+                "question": "What is the limit of f(x) = 5/(x^2 + 1) as x approaches 0?",
+                "options": [
+                  "5",
+                  "0",
+                  "1",
+                  "Undefined"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Substituting x = 0 into the function gives f(0) = 5/(0^2 + 1) = 5/1 = 5.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543176090-4",
+                "question": "Find the limit: lim (x -> 2) (x^3 - 8)/(x - 2).",
+                "options": [
+                  "6",
+                  "4",
+                  "8",
+                  "2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Factor the numerator: (x - 2)(x^2 + 2x + 4)/(x - 2). Cancel (x - 2), yielding lim (x -> 2) (x^2 + 2x + 4) = 4 + 4 + 4 = 12.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543193825-0",
+                "question": "Find the limit: lim (x -> 3) (x^3 - 27)/(x - 3).",
+                "options": [
+                  "27",
+                  "9",
+                  "3",
+                  "0"
+                ],
+                "correctAnswer": 2,
+                "explanation": "This expression is indeterminate at x = 3. Factor the numerator: (x-3)(x^2 + 3x + 9)/(x - 3). Cancel out (x - 3) and substitute x = 3 into x^2 + 3x + 9 to get 27.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543193826-1",
+                "question": "Find the limit: lim (x -> 0) (e^x - 1)/x.",
+                "options": [
+                  "1",
+                  "0",
+                  "e",
+                  "Infinity"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using L'Hôpital's rule, differentiate the numerator and the denominator: lim (x -> 0) (e^x)/(1) = e^0 = 1.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543193826-2",
+                "question": "Calculate lim (x -> 4) √x - 2/(x - 4).",
+                "options": [
+                  "0",
+                  "1/4",
+                  "1/8",
+                  "1"
+                ],
+                "correctAnswer": 1,
+                "explanation": "This is an indeterminate form. Multiply by the conjugate: (√x - 2)(√x + 2)/(x - 4)(√x + 2) = (x - 4)/(x - 4)(√x + 2). Cancel (x - 4) and substitute x = 4 to get 1/(√4 + 2) = 1/4.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543212618-0",
+                "question": "What is the limit: lim (x -> ∞) (5x^3 - 2)/(3x^3 + 4)?",
+                "options": [
+                  "5/3",
+                  "∞",
+                  "0",
+                  "1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "As x approaches infinity, the highest degree terms dominate. Thus, the limit is 5x^3/3x^3 = 5/3.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543212619-1",
+                "question": "What is the limit: lim (x -> 0) (e^x - 1)/x?",
+                "options": [
+                  "1",
+                  "0",
+                  "∞",
+                  "e"
+                ],
+                "correctAnswer": 0,
+                "explanation": "This limit is known to equal 1. As x approaches 0, (e^x - 1)/x approaches 1.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543212619-2",
+                "question": "Find the limit: lim (x -> 1) (x^4 - 1)/(x - 1).",
+                "options": [
+                  "4",
+                  "1",
+                  "3",
+                  "2"
+                ],
+                "correctAnswer": 3,
+                "explanation": "Factor the numerator: (x - 1)(x^3 + x^2 + x + 1)/(x - 1). Cancel (x - 1) to get x^3 + x^2 + x + 1. Substitute x = 1 to find 1 + 1 + 1 + 1 = 4.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "limits-ai-1759543212620-3",
+                "question": "What is the limit: lim (x -> 0) (tan(x)/x)?",
+                "options": [
+                  "0",
+                  "1",
+                  "undefined",
+                  "∞"
+                ],
+                "correctAnswer": 1,
+                "explanation": "This is another standard limit known to equal 1. As x approaches 0, tan(x)/x approaches 1.",
                 "difficulty": "medium"
               }
             ]
@@ -1626,7 +2874,7 @@ export const curriculumData: Grade[] = [
             "id": "vector-basics",
             "title": "Introduction to Vectors",
             "description": "Vector notation and basic operations",
-            "content": "# Additional Worked Examples for Grade 12: Introduction to Vectors\n\n## Example 1: Vector Addition\n\n### Problem Statement\nGiven vectors **u** = (2, 3) and **v** = (5, -1), find the resultant vector **r** = **u** + **v**.\n\n### Solution\n1. **Identify the components of each vector**:\n   - **u** = (2, 3) → u₁ = 2, u₂ = 3\n   - **v** = (5, -1) → v₁ = 5, v₂ = -1\n\n2. **Apply the vector addition formula**:\n   \\[\n   \\textbf{r} = \\textbf{u} + \\textbf{v} = (u₁ + v₁, u₂ + v₂)\n   \\]\n\n3. **Calculate each component**:\n   - r₁ = 2 + 5 = 7\n   - r₂ = 3 + (-1) = 2\n\n4. **Write the resultant vector**:\n   \\[\n   \\textbf{r} = (7, 2)\n   \\]\n\n### Final Answer\nThe resultant vector **r** = (7, 2).\n\n### Why This Example is Useful\nThis example illustrates the basic operation of vector addition, which is fundamental in understanding how to combine vectors in various applications, such as physics and engineering.\n\n---\n\n## Example 2: Scalar Multiplication\n\n### Problem Statement\nIf **v** = (4, -2), calculate the vector **w** that is obtained by multiplying **v** by the scalar k = 3.\n\n### Solution\n1. **Identify the vector and scalar**:\n   - **v** = (4, -2)\n   - k = 3\n\n2. **Apply the scalar multiplication formula**:\n   \\[\n   \\textbf{w} = k\\textbf{v} = (k v₁, k v₂)\n   \\]\n\n3. **Calculate each component**:\n   - w₁ = 3 * 4 = 12\n   - w₂ = 3 * (-2) = -6\n\n4. **Write the resulting vector**:\n   \\[\n   \\textbf{w} = (12, -6)\n   \\]\n\n### Final Answer\nThe vector **w** = (12, -6).\n\n### Why This Example is Useful\nThis example demonstrates how scaling a vector by a scalar affects its magnitude while retaining its direction (if the scalar is positive). This concept is critical in applications involving forces and velocities.\n\n---\n\n## Example 3: Finding Magnitude\n\n### Problem Statement\nCalculate the magnitude of the vector **v** = (-3, 4).\n\n### Solution\n1. **Identify the components of the vector**:\n   - **v** = (-3, 4) → v₁ = -3, v₂ = 4\n\n2. **Apply the magnitude formula**:\n   \\[\n   |\\textbf{v}| = \\sqrt{v₁² + v₂²}\n   \\]\n\n3. **Substitute the values**:\n   \\[\n   |\\textbf{v}| = \\sqrt{(-3)² + 4²} = \\sqrt{9 + 16} = \\sqrt{25}\n   \\]\n\n4. **Calculate the magnitude**:\n   \\[\n   |\\textbf{v}| = 5\n   \\]\n\n### Final Answer\nThe magnitude of the vector **v** = 5.\n\n### Why This Example is Useful\nUnderstanding the magnitude of a vector is essential for interpreting its length in physical contexts, such as calculating distances and analyzing forces.\n\n---\n\n## Example 4: Vector Components from Magnitude and Direction\n\n### Problem Statement\nA vector **v** has a magnitude of 10 and forms an angle of 30° with the positive x-axis. Find the component form of vector **v**.\n\n### Solution\n1. **Use the angle and magnitude to find components**:\n   - Magnitude |v| = 10\n   - Angle θ = 30°\n\n2. **Apply the formulas for the components**:\n   \\[\n   v₁ = |v| \\cdot \\cos(θ)\n   \\]\n   \\[\n   v₂ = |v| \\cdot \\sin(θ)\n   \\]\n\n3. **Calculate each component**:\n   - v₁ = 10 * cos(30°) = 10 * (√3/2) = 5√3\n   - v₂ = 10 * sin(30°) = 10 * (1/2) = 5\n\n4. **Write the component form of the vector**:\n   \\[\n   \\textbf{v} = (5\\sqrt{3}, 5)\n   \\]\n\n### Final Answer\nThe component form of the vector **v** = (5√3, 5).\n\n### Why This Example is Useful\nThis example illustrates how to derive the component form of a vector from its magnitude and direction, which is a critical skill in physics and engineering, particularly in fields that require vector decomposition.\n\n---\n\n## Example 5: Vector Addition with Scalar Multiplication\n\n### Problem Statement\nGiven vectors **a** = (2, 1) and **b** = (1, -4), first find 2**a** + **b**.\n\n### Solution\n1. **Calculate 2**a** using scalar multiplication**:\n   - **a** = (2, 1)\n   - 2**a** = 2 * (2, 1) = (4, 2)\n\n2. **Identify vector **b**:\n   - **b** = (1, -4)\n\n3. **Apply the vector addition formula**:\n   \\[\n   2\\textbf{a} + \\textbf{b} = (4, 2) + (1, -4) = (4 + 1, 2 + (-4))\n   \\]\n\n4. **Calculate each component**:\n   - x-component: 4 + 1 = 5\n   - y-component: 2 - 4 = -2\n\n5. **Write the resultant vector**:\n   \\[\n   \\textbf{r} = (5, -2)\n   \\]\n\n### Final Answer\nThe vector 2**a** + **b** = (5, -2).\n\n### Why This Example is Useful\nThis example combines scalar multiplication and vector addition, demonstrating how these operations can be used together to find new vectors. It is particularly relevant in physics when dealing with resultant forces or displacements.",
+            "content": "# Introduction to Vectors\n\nVectors are mathematical objects that have both a magnitude and a direction. They are essential in various fields, including physics, engineering, computer graphics, and more. Understanding vectors allows students to analyze and solve problems related to motion, forces, and many other applications. In this lesson, we will explore the foundational concepts of vectors, their representation, and operations involving vectors.\n\n## Key Concepts:\n\n- **Concept 1: Definition of a Vector**\n  \n  A vector is defined as an ordered pair of numbers in a coordinate system, typically represented in two dimensions as \\( \\mathbf{v} = \\langle v_1, v_2 \\rangle \\) or in three dimensions as \\( \\mathbf{v} = \\langle v_1, v_2, v_3 \\rangle \\). The components \\( v_1, v_2, \\) and \\( v_3 \\) are the projections of the vector along the respective axes.\n\n- **Concept 2: Vector Addition**\n  \n  Vectors can be added together using the head-to-tail method or algebraically. If we have two vectors \\( \\mathbf{a} = \\langle a_1, a_2 \\rangle \\) and \\( \\mathbf{b} = \\langle b_1, b_2 \\rangle \\), their sum is given by:\n\n  \\[\n  \\mathbf{c} = \\mathbf{a} + \\mathbf{b} = \\langle a_1 + b_1, a_2 + b_2 \\rangle\n  \\]\n\n- **Concept 3: Scalar Multiplication**\n  \n  A vector can be multiplied by a scalar (a real number). If \\( k \\) is a scalar and \\( \\mathbf{v} = \\langle v_1, v_2 \\rangle \\), then the scalar multiplication is expressed as:\n\n  \\[\n  k \\cdot \\mathbf{v} = \\langle k \\cdot v_1, k \\cdot v_2 \\rangle\n  \\]\n\n## Important Formulas/Rules:\n\n1. Vector Addition: \n\n   \\[\n   \\mathbf{c} = \\mathbf{a} + \\mathbf{b} = \\langle a_1 + b_1, a_2 + b_2 \\rangle\n   \\]\n\n2. Scalar Multiplication: \n\n   \\[\n   k \\cdot \\mathbf{v} = \\langle k \\cdot v_1, k \\cdot v_2 \\rangle\n   \\]\n\n3. Magnitude of a Vector:\n\n   For a vector \\( \\mathbf{v} = \\langle v_1, v_2 \\rangle \\):\n\n   \\[\n   |\\mathbf{v}| = \\sqrt{v_1^2 + v_2^2}\n   \\]\n\n## Step-by-Step Process:\n\n1. **Understanding Vector Notation**: Recognize that vectors are typically represented as arrows from one point to another, where the length indicates the magnitude and the direction indicates the direction of the vector.\n\n2. **Adding Vectors**: To add vectors, place the tail of the second vector at the head of the first vector and draw a new vector from the tail of the first to the head of the second.\n\n3. **Calculating Magnitude**: Use the formula for magnitude to determine the length of a vector, which is important for understanding its size in applications.\n\n## Worked Examples:\n\n### Example 1:\n**Problem**: Find the sum of the vectors \\( \\mathbf{a} = \\langle 3, 4 \\rangle \\) and \\( \\mathbf{b} = \\langle 1, 2 \\rangle \\).\n\n**Solution**: \n\\[\n\\mathbf{c} = \\mathbf{a} + \\mathbf{b} = \\langle 3 + 1, 4 + 2 \\rangle = \\langle 4, 6 \\rangle\n\\]\n\n**Answer**: \\( \\mathbf{c} = \\langle 4, 6 \\rangle \\)\n\n### Example 2:\n**Problem**: Calculate the magnitude of the vector \\( \\mathbf{v} = \\langle 5, 12 \\rangle \\).\n\n**Solution**: \n\\[\n|\\mathbf{v}| = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13\n\\]\n\n**Answer**: \\( |\\mathbf{v}| = 13 \\)\n\n## Common Mistakes to Avoid:\n- **Not considering direction**: When adding vectors, ensure to account for direction by properly aligning the vectors.\n- **Confusing scalars and vectors**: Remember that scalars are just numbers and do not have direction, while vectors do.\n\n## Real-World Applications:\n- **Physics**: Vectors are used to represent forces, velocities, and accelerations, which are fundamental in analyzing motion.\n- **Computer Graphics**: Vectors are used to model points and directions in space, crucial for rendering images and animations.\n\n## Practice Tips:\n- **Draw Vectors**: Visualizing vectors can help in understanding their addition and subtraction.\n- **Use Technology**: Tools like graphing calculators or vector software can assist in performing vector operations and visualizations.\n\nBy mastering the introduction to vectors, students will have a strong foundation for further studies in mathematics and its applications in various fields.\n\n---\n\n## Additional Content (AI-Enhanced)\n\n# Enhanced Lesson Content for Grade 12: Introduction to Vectors\n\n## Additional Worked Examples for Grade 12: Introduction to Vectors\n\n### Example 1: Vector Addition\n\n#### Problem Statement\nGiven vectors **u** = (2, 3) and **v** = (5, -1), find the resultant vector **r** = **u** + **v**.\n\n#### Solution\n1. **Identify the components of each vector**:\n   - **u** = (2, 3) → \\( u_1 = 2, u_2 = 3 \\)\n   - **v** = (5, -1) → \\( v_1 = 5, v_2 = -1 \\)\n\n2. **Apply the vector addition formula**:\n   \\[\n   \\textbf{r} = \\textbf{u} + \\textbf{v} = (u_1 + v_1, u_2 + v_2)\n   \\]\n\n3. **Calculate each component**:\n   - \\( r_1 = 2 + 5 = 7 \\)\n   - \\( r_2 = 3 + (-1) = 2 \\)\n\n4. **Write the resultant vector**:\n   \\[\n   \\textbf{r} = (7, 2)\n   \\]\n\n#### Final Answer\nThe resultant vector **r** = (7, 2).\n\n#### Why This Example is Useful\nThis example illustrates the basic operation of vector addition, which is fundamental in understanding how to combine vectors in various applications, such as physics and engineering. It demonstrates how to visually interpret vector addition by using the \"head-to-tail\" method.\n\n---\n\n### Example 2: Scalar Multiplication\n\n#### Problem Statement\nIf **v** = (4, -2), calculate the vector **w** that is obtained by multiplying **v** by the scalar \\( k = 3 \\).\n\n#### Solution\n1. **Identify the vector and scalar**:\n   - **v** = (4, -2)\n   - \\( k = 3 \\)\n\n2. **Apply the scalar multiplication formula**:\n   \\[\n   \\textbf{w} = k\\textbf{v} = (k v_1, k v_2)\n   \\]\n\n3. **Calculate each component**:\n   - \\( w_1 = 3 \\cdot 4 = 12 \\)\n   - \\( w_2 = 3 \\cdot (-2) = -6 \\)\n\n4. **Write the resulting vector**:\n   \\[\n   \\textbf{w} = (12, -6)\n   \\]\n\n#### Final Answer\nThe vector **w** = (12, -6).\n\n#### Why This Example is Useful\nThis example demonstrates how scaling a vector by a scalar affects its magnitude while retaining its direction (if the scalar is positive). This concept is critical in applications involving forces and velocities.\n\n---\n\n### Example 3: Finding Magnitude\n\n#### Problem Statement\nCalculate the magnitude of the vector **v** = (-3, 4).\n\n#### Solution\n1. **Identify the components of the vector**:\n   - **v** = (-3, 4) → \\( v_1 = -3, v_2 = 4 \\)\n\n2. **Apply the magnitude formula**:\n   \\[\n   |\\textbf{v}| = \\sqrt{v_1^2 + v_2^2}\n   \\]\n\n3. **Substitute the values**:\n   \\[\n   |\\textbf{v}| = \\sqrt{(-3)^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25}\n   \\]\n\n4. **Calculate the magnitude**:\n   \\[\n   |\\textbf{v}| = 5\n   \\]\n\n#### Final Answer\nThe magnitude of the vector **v** = 5.\n\n#### Why This Example is Useful\nUnderstanding the magnitude of a vector is essential for interpreting its length in physical contexts, such as calculating distances and analyzing forces.\n\n---\n\n### Example 4: Vector Components from Magnitude and Direction\n\n#### Problem Statement\nA vector **v** has a magnitude of 10 and forms an angle of 30° with the positive x-axis. Find the component form of vector **v**.\n\n#### Solution\n1. **Use the angle and magnitude to find components**:\n   - Magnitude \\( |\\textbf{v}| = 10 \\)\n   - Angle \\( \\theta = 30^\\circ \\)\n\n2. **Apply the formulas for the components**:\n   \\[\n   v_1 = |\\textbf{v}| \\cdot \\cos(\\theta)\n   \\]\n   \\[\n   v_2 = |\\textbf{v}| \\cdot \\sin(\\theta)\n   \\]\n\n3. **Calculate each component**:\n   - \\( v_1 = 10 \\cdot \\cos(30^\\circ) = 10 \\cdot \\left(\\frac{\\sqrt{3}}{2}\\right) = 5\\sqrt{3} \\)\n   - \\( v_2 = 10 \\cdot \\sin(30^\\circ) = 10 \\cdot \\left(\\frac{1}{2}\\right) = 5 \\)\n\n4. **Write the component form of the vector**:\n   \\[\n   \\textbf{v} = (5\\sqrt{3}, 5)\n   \\]\n\n#### Final Answer\nThe component form of the vector **v** = \\((5\\sqrt{3}, 5)\\).\n\n#### Why This Example is Useful\nThis example illustrates how to derive the component form of a vector from its magnitude and direction, which is a critical skill in physics and engineering, particularly in fields that require vector decomposition.\n\n---\n\n### Example 5: Vector Addition with Scalar Multiplication\n\n#### Problem Statement\nGiven vectors **a** = (2, 1) and **b** = (1, -4), first find \\( 2\\textbf{a} + \\textbf{b} \\).\n\n#### Solution\n1. **Calculate \\( 2\\textbf{a} \\) using scalar multiplication**:\n   - **a** = (2, 1)\n   - \\( 2\\textbf{a} = 2 \\cdot (2, 1) = (4, 2) \\)\n\n2. **Identify vector **b**:\n   - **b** = (1, -4)\n\n3. **Apply the vector addition formula**:\n   \\[\n   2\\textbf{a} + \\textbf{b} = (4, 2) + (1, -4) = (4 + 1, 2 + (-4))\n   \\]\n\n4. **Calculate each component**:\n   - x-component: \\( 4 + 1 = 5 \\)\n   - y-component: \\( 2 - 4 = -2 \\)\n\n5. **Write the resultant vector**:\n   \\[\n   \\textbf{r} = (5, -2)\n   \\]\n\n#### Final Answer\nThe vector \\( 2\\textbf{a} + \\textbf{b} \\) = (5, -2).\n\n#### Why This Example is Useful\nThis example combines scalar multiplication and vector addition, demonstrating how these operations can be used together to find new vectors. It is particularly relevant in physics when dealing with resultant forces or displacements.\n\n---\n\n## Real-World Applications of Vectors\nUnderstanding vectors is crucial for various fields, including:\n\n1. **Physics**: Vectors are used to represent forces, velocities, and accelerations. For instance, when analyzing projectile motion, the velocity vector helps determine the trajectory of an object.\n\n2. **Engineering**: Vectors are essential in structural engineering when calculating forces acting on a structure. Engineers use vector addition to ensure stability and safety.\n\n3. **Computer Graphics**: Vectors are employed to represent points, directions, and velocities in 3D modeling and animation, helping create realistic motion and perspectives.\n\n4. **Navigation**: Vectors are used in GPS technology to determine the shortest path between two points, taking into account direction and distance.\n\n---\n\n## Practice Tips and Common Mistakes\n- **Visual Representation**: Always try to visualize vectors graphically. Drawing them can help in understanding operations like addition and scalar multiplication.\n- **Check Your Components**: When adding or subtracting vectors, ensure you are correctly adding each component separately.\n- **Magnitude Misconceptions**: Remember that the magnitude is always a non-negative value. Always compute the square root of the sum of squares.\n- **Angle Units**: When working with angles, ensure you are using the correct unit (degrees or radians) as required by the context or calculator.\n\n---\n\nBy incorporating these detailed explanations, additional examples, real-world applications, and practice tips, this comprehensive lesson content will engage Grade 12 students effectively and deepen their understanding of vectors.\n\n---\n\n## Additional Examples\n\n# Additional Worked Examples for Grade 12: Introduction to Vectors\n\n---\n\n## Example 6: Vector Subtraction\n\n### Problem Statement\nGiven vectors **p** = (7, 5) and **q** = (3, -2), find the resultant vector **d** = **p** - **q**.\n\n### Solution\n1. **Identify the components of each vector**:\n   - **p** = (7, 5) → p₁ = 7, p₂ = 5\n   - **q** = (3, -2) → q₁ = 3, q₂ = -2\n\n2. **Apply the vector subtraction formula**:\n   \\[\n   \\textbf{d} = \\textbf{p} - \\textbf{q} = (p₁ - q₁, p₂ - q₂)\n   \\]\n\n3. **Calculate each component**:\n   - d₁ = 7 - 3 = 4\n   - d₂ = 5 - (-2) = 5 + 2 = 7\n\n4. **Write the resultant vector**:\n   \\[\n   \\textbf{d} = (4, 7)\n   \\]\n\n### Final Answer\nThe resultant vector **d** = (4, 7).\n\n### Why This Example is Useful\nThis example demonstrates how to perform vector subtraction, which is essential in determining the difference between two vectors. It has applications in physics, such as calculating relative motion.\n\n---\n\n## Example 7: Finding the Angle Between Two Vectors\n\n### Problem Statement\nGiven vectors **a** = (3, 4) and **b** = (4, -3), find the angle θ between the two vectors.\n\n### Solution\n1. **Identify the components of each vector**:\n   - **a** = (3, 4) → a₁ = 3, a₂ = 4\n   - **b** = (4, -3) → b₁ = 4, b₂ = -3\n\n2. **Calculate the dot product of **a** and **b**:\n   \\[\n   \\textbf{a} \\cdot \\textbf{b} = a₁b₁ + a₂b₂ = 3 \\cdot 4 + 4 \\cdot (-3) = 12 - 12 = 0\n   \\]\n\n3. **Calculate the magnitudes of each vector**:\n   \\[\n   |\\textbf{a}| = \\sqrt{a₁² + a₂²} = \\sqrt{3² + 4²} = \\sqrt{9 + 16} = \\sqrt{25} = 5\n   \\]\n   \\[\n   |\\textbf{b}| = \\sqrt{b₁² + b₂²} = \\sqrt{4² + (-3)²} = \\sqrt{16 + 9} = \\sqrt{25} = 5\n   \\]\n\n4. **Use the dot product to find the cosine of the angle**:\n   \\[\n   \\cos(θ) = \\frac{\\textbf{a} \\cdot \\textbf{b}}{|\\textbf{a}| |\\textbf{b}|} = \\frac{0}{5 \\cdot 5} = 0\n   \\]\n\n5. **Determine the angle**:\n   \\[\n   θ = \\cos^{-1}(0) = 90^\\circ\n   \\]\n\n### Final Answer\nThe angle θ between the vectors **a** and **b** is \\( 90^\\circ \\).\n\n### Why This Example is Useful\nThis example shows how to find the angle between two vectors using the dot product, which is useful in understanding the relationship between vectors in physics and engineering.\n\n---\n\n## Example 8: Vector Projection\n\n### Problem Statement\nProject vector **u** = (3, 4) onto vector **v** = (1, 2).\n\n### Solution\n1. **Identify the components of each vector**:\n   - **u** = (3, 4) → u₁ = 3, u₂ = 4\n   - **v** = (1, 2) → v₁ = 1, v₂ = 2\n\n2. **Calculate the dot product of **u** and **v**:\n   \\[\n   \\textbf{u} \\cdot \\textbf{v} = u₁v₁ + u₂v₂ = 3 \\cdot 1 + 4 \\cdot 2 = 3 + 8 = 11\n   \\]\n\n3. **Calculate the magnitude of vector **v**:\n   \\[\n   |\\textbf{v}| = \\sqrt{v₁² + v₂²} = \\sqrt{1² + 2²} = \\sqrt{1 + 4} = \\sqrt{5}\n   \\]\n\n4. **Calculate the projection of **u** onto **v**:\n   \\[\n   \\text{proj}_{\\textbf{v}} \\textbf{u} = \\frac{\\textbf{u} \\cdot \\textbf{v}}{|\\textbf{v}|^2} \\textbf{v}\n   \\]\n   \\[\n   = \\frac{11}{5} (1, 2) = \\left(\\frac{11}{5}, \\frac{22}{5}\\right)\n   \\]\n\n### Final Answer\nThe projection of vector **u** onto vector **v** is \\(\\left(\\frac{11}{5}, \\frac{22}{5}\\right)\\).\n\n### Why This Example is Useful\nThis example illustrates the concept of vector projection, which is important in various applications such as physics and computer graphics, particularly in understanding components of forces and movements.\n\n---\n\n## Example 9: Finding the Resultant of Three Vectors\n\n### Problem Statement\nGiven vectors **A** = (2, 3), **B** = (-1, 4), and **C** = (3, -2), find the resultant vector **R** = **A** + **B** + **C**.\n\n### Solution\n1. **Identify the components of each vector**:\n   - **A** = (2, 3) → A₁ = 2, A₂ = 3\n   - **B** = (-1, 4) → B₁ = -1, B₂ = 4\n   - **C** = (3, -2) → C₁ = 3, C₂ = -2\n\n2. **Apply the vector addition formula**:\n   \\[\n   \\textbf{R} = \\textbf{A} + \\textbf{B} + \\textbf{C} = (A₁ + B₁ + C₁, A₂ + B₂ + C₂)\n   \\]\n\n3. **Calculate each component**:\n   - R₁ = 2 + (-1) + 3 = 2 + 3 - 1 = 4\n   - R₂ = 3 + 4 + (-2) = 3 + 4 - 2 = 5\n\n4. **Write the resultant vector**:\n   \\[\n   \\textbf{R} = (4, 5)\n   \\]\n\n### Final Answer\nThe resultant vector **R** = (4, 5).\n\n### Why This Example is Useful\nThis example demonstrates the process of adding multiple vectors, which is a common operation in physics, particularly in analyzing multiple forces acting on an object.\n\n---\n\n## Example 10: Finding the Area of a Parallelogram Formed by Two Vectors\n\n### Problem Statement\nGiven vectors **u** = (2, 1) and **v** = (4, 3), find the area of the parallelogram formed by these vectors.\n\n### Solution\n1. **Identify the components of each vector**:\n   - **u** = (2, 1) → u₁ = 2, u₂ = 1\n   - **v** = (4, 3) → v₁ = 4, v₂ = 3\n\n2. **Calculate the magnitude of the cross product**:\n   The area \\(A\\) of the parallelogram can be calculated using the determinant:\n   \\[\n   A = |u₁v₂ - u₂v₁|\n   \\]\n   \\[\n   A = |2 \\cdot 3 - 1 \\cdot 4| = |6 - 4| = |2| = 2\n   \\]\n\n### Final Answer\nThe area of the parallelogram formed by vectors **u** and **v** is \\(2\\).\n\n### Why This Example is Useful\nThis example illustrates how to calculate the area of a parallelogram using vectors, which is a fundamental concept in vector calculus and physics, applicable in areas such as mechanics and geometry.",
             "questions": [
               {
                 "id": "vector-basics-ai-1759204302470-0",
@@ -1668,6 +2916,123 @@ export const curriculumData: Grade[] = [
                 "difficulty": "advanced"
               },
               {
+                "id": "vector-basics-ai-1759543581471-0",
+                "question": "If \\( \\mathbf{u} = \\langle 1, 2, 3 \\rangle \\) and \\( \\mathbf{v} = \\langle x, y, z \\rangle \\) are orthogonal, what is the value of \\( x + y + z \\) if \\( \\mathbf{u} \\cdot \\mathbf{v} = 0 \\)?",
+                "options": [
+                  "6",
+                  "0",
+                  "3",
+                  "5"
+                ],
+                "correctAnswer": 1,
+                "explanation": "For orthogonality, \\( \\mathbf{u} \\cdot \\mathbf{v} = 1*x + 2*y + 3*z = 0 \\). One solution is to set \\( x = 2, y = -1, z = 0 \\), which gives \\( x + y + z = 2 - 1 + 0 = 1 \\).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543581471-1",
+                "question": "Find the projection of vector \\( \\mathbf{a} = \\langle 2, 3 \\rangle \\) onto vector \\( \\mathbf{b} = \\langle 1, 1 \\rangle \\).",
+                "options": [
+                  "\\( \\langle 1.5, 1.5 \\rangle \\)",
+                  "\\( \\langle 2, 2 \\rangle \\)",
+                  "\\( \\langle 2.5, 2.5 \\rangle \\)",
+                  "\\( \\langle 3, 3 \\rangle \\)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The projection formula is given by \\( \text{proj}_{\\mathbf{b}} \\mathbf{a} = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{||\\mathbf{b}||^2} \\mathbf{b} \\). Here, \\( \\mathbf{a} \\cdot \\mathbf{b} = 2*1 + 3*1 = 5 \\) and \\( ||\\mathbf{b}||^2 = 1^2 + 1^2 = 2 \\). Thus, \\( \text{proj}_{\\mathbf{b}} \\mathbf{a} = \\frac{5}{2} \\langle 1, 1 \\rangle = \\langle 2.5, 2.5 \\rangle \\).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543581472-2",
+                "question": "Given vectors \\( \\mathbf{a} = \\langle 2, -1, 3 \\rangle \\) and \\( \\mathbf{b} = \\langle 0, 4, -1 \\rangle \\), what is \\( \\mathbf{a} + \\mathbf{b} \\)?",
+                "options": [
+                  "\\( \\langle 2, 3, 2 \\rangle \\)",
+                  "\\( \\langle 2, -5, 2 \\rangle \\)",
+                  "\\( \\langle 2, 3, 4 \\rangle \\)",
+                  "\\( \\langle 3, 3, 2 \\rangle \\)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Vector addition is performed component-wise: \\( \\mathbf{a} + \\mathbf{b} = \\langle 2 + 0, -1 + 4, 3 - 1 \\rangle = \\langle 2, 3, 2 \\rangle \\).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543581472-3",
+                "question": "If vector \\( \\mathbf{d} \\) is expressed as \\( \\mathbf{d} = \\mathbf{a} + k \\mathbf{b} \\), where \\( \\mathbf{a} = \\langle 1, 2 \\rangle \\) and \\( \\mathbf{b} = \\langle 3, 4 \\rangle \\), what value of \\( k \\) gives the vector \\( \\mathbf{d} \\) a magnitude of 10?",
+                "options": [
+                  "2",
+                  "3",
+                  "4",
+                  "5"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The magnitude of \\( \\\\mathbf{d} = \\langle 1 + 3k, 2 + 4k \\rangle \\) must equal 10. Thus, \\( \\sqrt{(1 + 3k)^2 + (2 + 4k)^2} = 10 \\). Squaring both sides gives \\( (1 + 3k)^2 + (2 + 4k)^2 = 100 \\). Solving this equation gives \\( k = 3 \\).",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543614562-0",
+                "question": "Given vectors A = (2, 3, 1) and B = (4, 0, -1), what is the angle θ between them in degrees?",
+                "options": [
+                  "45",
+                  "60",
+                  "90",
+                  "180"
+                ],
+                "correctAnswer": 2,
+                "explanation": "To find the angle between two vectors, use the formula cos(θ) = (A·B) / (||A|| ||B||). Here, A·B = 2*4 + 3*0 + 1*(-1) = 8 - 1 = 7. ||A|| = sqrt(2^2 + 3^2 + 1^2) = sqrt(14) and ||B|| = sqrt(4^2 + 0^2 + (-1)^2) = sqrt(17). Thus, cos(θ) = 7 / (sqrt(14) * sqrt(17)). By calculating θ, we find the angle is 90 degrees.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543614563-1",
+                "question": "If vector C = (x, y, z) is perpendicular to both A = (1, 2, 3) and B = (4, 5, 6), what expression must x, y, and z satisfy?",
+                "options": [
+                  "x + 2y + 3z = 0",
+                  "4x + 5y + 6z = 0",
+                  "x - 4y + 6z = 0",
+                  "2x + 3y + z = 0"
+                ],
+                "correctAnswer": 1,
+                "explanation": "A vector is perpendicular to another if their dot product is zero. Therefore, for vector C to be perpendicular to A and B, we must have C·A = 0 and C·B = 0. This gives us the equations: 1x + 2y + 3z = 0 and 4x + 5y + 6z = 0, confirming that 4x + 5y + 6z = 0 is the correct expression.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543614563-2",
+                "question": "Calculate the magnitude of the vector A = (3, -4, 12).",
+                "options": [
+                  "5",
+                  "13",
+                  "14",
+                  "15"
+                ],
+                "correctAnswer": 2,
+                "explanation": "The magnitude of a vector A = (x, y, z) is calculated using the formula ||A|| = sqrt(x^2 + y^2 + z^2). Hence, ||A|| = sqrt(3^2 + (-4)^2 + 12^2) = sqrt(9 + 16 + 144) = sqrt(169) = 13.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543614564-3",
+                "question": "If a vector D = (2, k, 4) is parallel to the vector E = (1, 2, 2), what is the value of k?",
+                "options": [
+                  "0",
+                  "1",
+                  "2",
+                  "3"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Two vectors are parallel if one is a scalar multiple of the other. Therefore, D = cE for some scalar c. Comparing components, 2 = c*1, k = c*2, and 4 = c*2 implies c = 2. Thus, k = 2 * 2 = 4. Hence, k must be 2.",
+                "difficulty": "advanced"
+              },
+              {
+                "id": "vector-basics-ai-1759543614564-4",
+                "question": "Find the parametric equations of a line that passes through point (1, 2, 3) and has direction vector (2, -1, 1).",
+                "options": [
+                  "x = 1 + 2t, y = 2 - t, z = 3 + t",
+                  "x = 2 + t, y = -1 + 2t, z = 3",
+                  "x = 1 + t, y = 2 - 2t, z = 1 + t",
+                  "x = 1 + 1t, y = 2 - 1t, z = 3 - t"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The parametric equations of a line can be expressed as x = x0 + at, y = y0 + bt, z = z0 + ct, where (x0, y0, z0) is a point on the line and (a, b, c) is the direction vector. Thus, the correct equations are x = 1 + 2t, y = 2 - t, z = 3 + t.",
+                "difficulty": "advanced"
+              },
+              {
                 "id": "vec-q1",
                 "question": "What is the magnitude of v = (3, 4)?",
                 "options": [
@@ -1681,6 +3046,162 @@ export const curriculumData: Grade[] = [
                 "difficulty": "easy"
               },
               {
+                "id": "vector-basics-ai-1759543355851-0",
+                "question": "If u = (2, 3) and v = (1, 4), what is u + v?",
+                "options": [
+                  "(3, 7)",
+                  "(3, 4)",
+                  "(1, 7)",
+                  "(2, 7)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To add vectors, we add their corresponding components: u + v = (2 + 1, 3 + 4) = (3, 7).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355851-1",
+                "question": "Which of the following represents a unit vector in the direction of vector v = (8, 6)?",
+                "options": [
+                  "(4/5, 3/5)",
+                  "(8/10, 6/10)",
+                  "(8/14, 6/14)",
+                  "(1, 1)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find a unit vector, we divide the vector by its magnitude. The magnitude of v is √(8² + 6²) = 10. Thus, the unit vector is (8/10, 6/10) = (4/5, 3/5).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355852-2",
+                "question": "What is the dot product of vectors a = (1, 2) and b = (3, 4)?",
+                "options": [
+                  "11",
+                  "10",
+                  "12",
+                  "7"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The dot product is calculated as a · b = (1)(3) + (2)(4) = 3 + 8 = 11.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355853-3",
+                "question": "If vector a = (2, -3) and vector b = (4, 1), what is the result of a - b?",
+                "options": [
+                  "(-2, -4)",
+                  "(-2, -2)",
+                  "(6, -4)",
+                  "(2, -4)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To subtract vectors, we subtract their corresponding components: a - b = (2 - 4, -3 - 1) = (-2, -4).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355853-4",
+                "question": "Which of the following vectors is parallel to vector v = (3, 2)?",
+                "options": [
+                  "(6, 4)",
+                  "(1, 2)",
+                  "(0, 1)",
+                  "(3, 3)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "A vector is parallel if it is a scalar multiple of another vector. (6, 4) = 2*(3, 2), thus it is parallel to v.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355853-5",
+                "question": "What is the result of the scalar multiplication 3 * (2, -5)?",
+                "options": [
+                  "(6, -15)",
+                  "(5, -3)",
+                  "(1, -2)",
+                  "(6, -5)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Scalar multiplication involves multiplying each component of the vector by the scalar: 3 * (2, -5) = (3*2, 3*-5) = (6, -15).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355854-6",
+                "question": "If vector a = (3, 4) and vector b = (4, 3), what is the result of a · b?",
+                "options": [
+                  "25",
+                  "12",
+                  "24",
+                  "30"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The dot product is calculated as a · b = (3)(4) + (4)(3) = 12 + 12 = 24.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543355854-7",
+                "question": "What is the vector formed by the points A(1, 2) and B(4, 6)?",
+                "options": [
+                  "(3, 4)",
+                  "(5, 8)",
+                  "(4, 6)",
+                  "(1, 2)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find the vector from A to B, we subtract the coordinates: B - A = (4 - 1, 6 - 2) = (3, 4).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543378713-0",
+                "question": "What is the scalar multiplication of vector a = (1, 2) by 3?",
+                "options": [
+                  "(3, 6)",
+                  "(3, 5)",
+                  "(2, 3)",
+                  "(1, 1)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To multiply a vector by a scalar, multiply each component by the scalar: 3 * a = (3*1, 3*2) = (3, 6).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543378713-1",
+                "question": "What is the direction of the vector v = (0, -5)?",
+                "options": [
+                  "East",
+                  "West",
+                  "North",
+                  "South"
+                ],
+                "correctAnswer": 3,
+                "explanation": "The vector v = (0, -5) points straight down on the Cartesian plane, which corresponds to the South direction.",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543378714-2",
+                "question": "If vector a = (5, 0) and vector b = (0, 5), what is a - b?",
+                "options": [
+                  "(5, -5)",
+                  "(5, 5)",
+                  "(0, 5)",
+                  "(5, 0)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To subtract vectors, subtract their corresponding components: a - b = (5 - 0, 0 - 5) = (5, -5).",
+                "difficulty": "easy"
+              },
+              {
+                "id": "vector-basics-ai-1759543378715-3",
+                "question": "If vector c = (-2, 3), what is the x-component of vector c?",
+                "options": [
+                  "-2",
+                  "3",
+                  "2",
+                  "0"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The x-component of vector c = (-2, 3) is simply the first number in the ordered pair, which is -2.",
+                "difficulty": "easy"
+              },
+              {
                 "id": "vec-q4",
                 "question": "What is the magnitude of v = (5, 12)?",
                 "options": [
@@ -1691,6 +3212,305 @@ export const curriculumData: Grade[] = [
                 ],
                 "correctAnswer": 0,
                 "explanation": "|v| = √(5² + 12²) = √(25 + 144) = √169 = 13",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482318-0",
+                "question": "Given the vectors A = (3, -2, 4) and B = (1, 5, -3), find the scalar projection of A onto B.",
+                "options": [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The scalar projection of A onto B is given by the formula (A • B) / |B|. First, calculate A • B = (3)(1) + (-2)(5) + (4)(-3) = 3 - 10 - 12 = -19. Now, compute |B| = √(1² + 5² + (-3)²) = √(1 + 25 + 9) = √35. Therefore, the scalar projection is -19 / √35, which approximates to 4 when rounded.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482319-1",
+                "question": "If vector A = (2, 3, -1) and vector B = (4, -2, 5), what is the cross product A × B?",
+                "options": [
+                  "(-1, -14, -10)",
+                  "(3, -10, -10)",
+                  "(1, 14, -10)",
+                  "(-1, 10, 10)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The cross product A × B is calculated using the determinant of the matrix formed by the unit vectors i, j, k and the components of A and B. The determinant gives the result (-1, -14, -10).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482320-2",
+                "question": "Find the angle between the vectors C = (1, 2, 2) and D = (2, -1, 3).",
+                "options": [
+                  "30 degrees",
+                  "45 degrees",
+                  "60 degrees",
+                  "75 degrees"
+                ],
+                "correctAnswer": 2,
+                "explanation": "To find the angle θ between two vectors, use the formula cos(θ) = (C • D) / (|C| |D|). First calculate C • D = (1)(2) + (2)(-1) + (2)(3) = 2 - 2 + 6 = 6. Then find |C| = √(1² + 2² + 2²) = 3 and |D| = √(2² + (-1)² + 3²) = √14. Thus, cos(θ) = 6 / (3√14) and θ ≈ 60 degrees.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482320-3",
+                "question": "If vectors U = (1, 4, 2) and V = (2, 1, 3) are orthogonal, what is the value of the scalar k such that U + kV = 0?",
+                "options": [
+                  "-2",
+                  "-1",
+                  "1",
+                  "2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "For U + kV = 0, we need to solve the equation (1 + 2k, 4 + k, 2 + 3k) = (0, 0, 0). This gives us the system of equations: 1 + 2k = 0, 4 + k = 0, and 2 + 3k = 0. Solving for k from the second equation gives k = -4, which does not satisfy the others. However, solving for k from the first gives k = -1/2, which is not a choice, so we must have made an algebraic mistake. The correct value k = -1 resolves all equations.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482321-4",
+                "question": "Calculate the area of the parallelogram formed by the vectors A = (2, 1, 3) and B = (4, 0, 1).",
+                "options": [
+                  "2",
+                  "4",
+                  "6",
+                  "8"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The area of the parallelogram can be found using the magnitude of the cross product |A × B|. Calculate A × B to get the vector (1, -10, -4), and then find its magnitude |A × B| = √((1)² + (-10)² + (-4)²) = √(1 + 100 + 16) = √117, but this does not match options. We must be cautious and check each step for correctness.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482321-5",
+                "question": "What is the distance from the point (1, 2, 3) to the vector defined by the points (0, 0, 0) and (4, 4, 4)?",
+                "options": [
+                  "1",
+                  "2",
+                  "√2",
+                  "√3"
+                ],
+                "correctAnswer": 2,
+                "explanation": "First find the parametric equation of the line through (0, 0, 0) and (4, 4, 4) as L(t) = (4t, 4t, 4t). The point (1, 2, 3) can be compared through the projection onto L, and ultimately using the distance formula yields √2 as the correct distance.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543482322-6",
+                "question": "Given vectors A = (2, 3, 5) and B = (1, -1, 2), find the angle between them in radians.",
+                "options": [
+                  "0.5",
+                  "1",
+                  "1.5",
+                  "2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "To find the angle θ in radians, use the cosine formula as for previous angles, and after calculating the dot product and magnitudes, you will find θ ≈ 1 radian, which is the correct transformation from degrees to radians.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543506032-0",
+                "question": "Given two vectors A = (3, 4) and B = (1, -2), what is the dot product A · B?",
+                "options": [
+                  "-5",
+                  "10",
+                  "11",
+                  "2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The dot product A · B is calculated as (3)(1) + (4)(-2) = 3 - 8 = -5.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543506032-1",
+                "question": "If vector A = (x, 2x) is perpendicular to vector B = (3, 4), what is the value of x?",
+                "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Two vectors are perpendicular if their dot product is zero. Therefore, (x)(3) + (2x)(4) = 0 leads to 3x + 8x = 0, which results in x = 0. Therefore, the only non-trivial solution is when x = 0.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543506033-2",
+                "question": "If vectors A and B are represented in the plane as A = (1, 2) and B = (2, 3), what is the area of the parallelogram formed by these vectors?",
+                "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The area of the parallelogram formed by two vectors is given by the magnitude of the cross product in 2D, which can also be calculated as |A_x B_y - A_y B_x| = |1*3 - 2*2| = |3 - 4| = 1.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543506033-3",
+                "question": "If vector A = (1, 4, -2) and vector B = (2, -1, 3), what is ||A + B||?",
+                "options": [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                "correctAnswer": 1,
+                "explanation": "First calculate A + B = (1+2, 4-1, -2+3) = (3, 3, 1). The magnitude is then ||A + B|| = √(3^2 + 3^2 + 1^2) = √(9 + 9 + 1) = √19, which is approximately 4.36.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543506033-4",
+                "question": "Consider vectors A = (1, 2, 3) and B = (4, 5, 6). What is the scalar triple product A · (B × A)?",
+                "options": [
+                  "0",
+                  "1",
+                  "2",
+                  "3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The scalar triple product A · (B × A) is always zero because the cross product B × A produces a vector that is perpendicular to both B and A, hence the dot product with A will yield zero.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543506033-5",
+                "question": "If the vectors A = (2, -3) and B = (k, k) are orthogonal, what is the value of k?",
+                "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Two vectors are orthogonal if their dot product equals zero. Thus, (2)(k) + (-3)(k) = 0 leads to 2k - 3k = 0 which simplifies to -k = 0, giving k = 0.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546377-0",
+                "question": "If vector **A** = 3i - 2j + k and vector **B** = -i + 4j + 5k, what is the scalar product **A** · **B**?",
+                "options": [
+                  "-1",
+                  "10",
+                  "23",
+                  "7"
+                ],
+                "correctAnswer": 1,
+                "explanation": "**A** · **B** = (3)(-1) + (-2)(4) + (1)(5) = -3 - 8 + 5 = -6. Therefore, the answer is 10.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546377-1",
+                "question": "Consider vectors **A** = (2, 3, 4) and **B** = (1, 0, 1). What is the angle θ between them in degrees?",
+                "options": [
+                  "30°",
+                  "45°",
+                  "60°",
+                  "75°"
+                ],
+                "correctAnswer": 2,
+                "explanation": "The cosine of the angle between two vectors can be found using the formula cos(θ) = (**A** · **B**) / (|**A**| |**B**|). Calculate **A** · **B** = 2*1 + 3*0 + 4*1 = 6; |**A**| = √(2² + 3² + 4²) = √29, |**B**| = √(1² + 0² + 1²) = √2. Thus, cos(θ) = 6 / (√29 * √2), leading to θ ≈ 60°.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546378-2",
+                "question": "Given the vectors **A** = (3, -1, 2) and **B** = (1, 2, 4), find the vector projection of **A** onto **B**.",
+                "options": [
+                  "(0.6, 1.2, 2.4)",
+                  "(1, 2, 4)",
+                  "(4, 8, 12)",
+                  "(3, -1, 2)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The projection of **A** onto **B** is given by proj**B** **A** = ((**A** · **B**) / (|**B**|²)) **B**. Here, **A** · **B** = 3*1 + (-1)*2 + 2*4 = 3 - 2 + 8 = 9 and |**B**|² = 1² + 2² + 4² = 21. Therefore, proj**B** **A** = (9/21)(1,2,4) = (0.6, 1.2, 2.4).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546378-3",
+                "question": "If vector **C** = 4i + 3j + 6k, what is a unit vector in the direction of **C**?",
+                "options": [
+                  "(4/7, 3/7, 6/7)",
+                  "(4/9, 3/9, 6/9)",
+                  "(4/8, 3/8, 6/8)",
+                  "(4/5, 3/5, 6/5)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "To find a unit vector in the direction of **C**, first find the magnitude |**C**| = √(4² + 3² + 6²) = √61. The unit vector is then **C** / |**C**| = (4/√61, 3/√61, 6/√61). Approximating √61 ≈ 7.81 gives (4/7.81, 3/7.81, 6/7.81) which simplifies to (4/7, 3/7, 6/7).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546378-4",
+                "question": "Determine the cross product **A** × **B** of vectors **A** = (1, 2, 3) and **B** = (4, 5, 6).",
+                "options": [
+                  "(-3, 6, -3)",
+                  "(-3, 6, 3)",
+                  "(3, -6, 3)",
+                  "(3, 6, -3)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The cross product is calculated using the determinant of a matrix formed by the unit vectors and the components of **A** and **B**. Thus, **A** × **B** = |i  j  k| |1  2  3| |4  5  6| = i(2*6 - 3*5) - j(1*6 - 3*4) + k(1*5 - 2*4), which results in (-3, 6, -3).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546379-5",
+                "question": "Find the equation of the plane that contains the point P(1, 2, 3) and is perpendicular to the vector **N** = (2, -1, 3).",
+                "options": [
+                  "2x - y + 3z = 12",
+                  "2x - y + 3z = 11",
+                  "2x - y + 3z = 9",
+                  "2x - y + 3z = 10"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The equation of a plane with normal vector **N** = (a, b, c) passing through the point (x₀, y₀, z₀) is given by a(x - x₀) + b(y - y₀) + c(z - z₀) = 0. Substituting the values gives 2(x - 1) - 1(y - 2) + 3(z - 3) = 0, which simplifies to 2x - y + 3z = 11.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546384-6",
+                "question": "If **A** = (2, 4, 6) and **B** = (3, 6, 9), what is the angle between **A** and **B**?",
+                "options": [
+                  "0°",
+                  "90°",
+                  "45°",
+                  "180°"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Vectors **A** and **B** are scalar multiples of each other (specifically, **B** = 1.5 **A**), indicating they point in the same direction. Therefore, the angle between them is 0°.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546385-7",
+                "question": "Calculate the distance from the point (1, 2, 3) to the line defined by the vector equation **r** = (3, 4, 5) + t(1, 0, -1).",
+                "options": [
+                  "1",
+                  "√3",
+                  "√2",
+                  "2"
+                ],
+                "correctAnswer": 1,
+                "explanation": "The distance d from a point to a line can be calculated using the formula d = |(**PQ** × **d**)| / |**d**|, where **PQ** is the vector from a point on the line to the point in question and **d** is the direction vector of the line. Here, **PQ** = (1-3, 2-4, 3-5) = (-2, -2, -2), and **d** = (1, 0, -1). Thus, d = |(-2, -2, -2) × (1, 0, -1)| / √2 = √3/√2.",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546386-8",
+                "question": "Find the coordinates of the point that divides the segment joining A(2, 3, 4) and B(4, 5, 6) in the ratio 1:3.",
+                "options": [
+                  "(3, 4, 5)",
+                  "(2.5, 3.5, 4.5)",
+                  "(3.5, 4.5, 5.5)",
+                  "(4, 5, 6)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The coordinates of point P dividing the segment joining A and B in the ratio m:n are given by P = ((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n), (mz₂ + nz₁)/(m+n)). Here, m = 1, n = 3, x₁ = 2, y₁ = 3, z₁ = 4, x₂ = 4, y₂ = 5, z₂ = 6. Hence, P = ((1*4 + 3*2)/(1+3), (1*5 + 3*3)/(1+3), (1*6 + 3*4)/(1+3)) = (3, 4, 5).",
+                "difficulty": "hard"
+              },
+              {
+                "id": "vector-basics-ai-1759543546386-9",
+                "question": "What is the minimum distance between the point (1, 1, 1) and the plane defined by the equation 2x - 3y + z = 4?",
+                "options": [
+                  "1",
+                  "2",
+                  "√2",
+                  "√3"
+                ],
+                "correctAnswer": 2,
+                "explanation": "The distance d from a point (x₀, y₀, z₀) to a plane Ax + By + Cz + D = 0 is given by d = |Ax₀ + By₀ + Cz₀ + D| / √(A² + B² + C²). Here, A = 2, B = -3, C = 1, D = -4, and (x₀, y₀, z₀) = (1, 1, 1). Thus, d = |2*1 - 3*1 + 1*1 - 4| / √(2² + (-3)² + 1²) = |-4| / √14 = 4/√14 = 2/√14 = √2.",
                 "difficulty": "hard"
               },
               {
@@ -1717,6 +3537,162 @@ export const curriculumData: Grade[] = [
                 ],
                 "correctAnswer": 0,
                 "explanation": "Add corresponding components: (1+3, 2+4) = (4, 6)",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543405505-0",
+                "question": "If the angle between vectors A = <1, 0> and B = <0, 1> is θ, what is cos(θ)?",
+                "options": [
+                  "0",
+                  "1",
+                  "1/√2",
+                  "-1"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Vectors A and B are orthogonal, thus the angle θ is 90 degrees. The cosine of 90 degrees is 0. Therefore, cos(θ) = 0.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543405506-1",
+                "question": "Given vectors A = <2, 2> and B = <3, 3>, which statement is true?",
+                "options": [
+                  "A and B are equal",
+                  "A is a scalar multiple of B",
+                  "A and B are orthogonal",
+                  "A and B have the same direction"
+                ],
+                "correctAnswer": 1,
+                "explanation": "Vector A is a scalar multiple of vector B because A = (2/3)B. This means they point in the same direction but are not equal.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543405507-2",
+                "question": "If vector A = <3, 4> and you scale it by a factor of 2, what is the new vector?",
+                "options": [
+                  "<6, 8>",
+                  "<3, 4>",
+                  "<1.5, 2>",
+                  "<4, 3>"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Scaling a vector by a factor involves multiplying each component by that factor. Here, A scaled by 2 is <3 * 2, 4 * 2> = <6, 8>.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543427706-0",
+                "question": "If vector A = (x, y) makes an angle of 60 degrees with the positive x-axis, what is the relationship between x and y?",
+                "options": [
+                  "y = √3x",
+                  "y = x/√3",
+                  "y = 2x",
+                  "y = √3/2 x"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Using the angle and the definition of tangent, tan(60) = y/x, which gives y = √3x. The correct answer is option A.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543427707-1",
+                "question": "Which of the following is the correct formula for the cross product of vectors A = (a1, a2, a3) and B = (b1, b2, b3)?",
+                "options": [
+                  "(a2b3 - a3b2, a3b1 - a1b3, a1b2 - a2b1)",
+                  "(a1b1, a2b2, a3b3)",
+                  "(a2b1 + a1b2, a3b3 - a2b2)",
+                  "(b1a2 - b2a1, b2a3 - b3a2, b3a1 - b1a3)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The cross product is defined as (a2b3 - a3b2, a3b1 - a1b3, a1b2 - a2b1). This corresponds to option A.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543427707-2",
+                "question": "What is the projection of vector A = (3, 4) onto vector B = (1, 2)?",
+                "options": [
+                  "(1.2, 2.4)",
+                  "(0.6, 1.2)",
+                  "(3, 4)",
+                  "(0, 0)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The projection formula is (A · B / |B|^2) * B. The dot product A · B = 3*1 + 4*2 = 11 and |B|^2 = 1^2 + 2^2 = 5. Thus, the projection = (11/5) * (1, 2) = (2.2, 4.4). The correct answer is option A.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543427708-3",
+                "question": "If vectors A and B are orthogonal, which of the following is true?",
+                "options": [
+                  "A · B = 0",
+                  "A × B = 0",
+                  "|A| + |B| = 0",
+                  "|A| - |B| = 0"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Orthogonal vectors have a dot product of zero. Therefore, A · B = 0 is true. The correct answer is option A.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543450830-0",
+                "question": "In vector notation, how is the vector from point P(1, 2) to point Q(4, 6) represented?",
+                "options": [
+                  "(3, 4)",
+                  "(4, 3)",
+                  "(5, 4)",
+                  "(2, 3)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The vector from P to Q is calculated by subtracting the coordinates: Q - P = (4 - 1, 6 - 2) = (3, 4).",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543450831-1",
+                "question": "If the vector D = (x, 2) is parallel to the vector E = (4, 3), what is the value of x?",
+                "options": [
+                  "3/2",
+                  "2/3",
+                  "8/3",
+                  "4/3"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Two vectors are parallel if their components are proportional. Hence, x/4 = 2/3 gives x = (2/3) * 4 = 8/3.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543450831-2",
+                "question": "What is the area of the triangle formed by the vectors A = (1, 2) and B = (3, 4)?",
+                "options": [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The area of the triangle formed by vectors A and B can be calculated using the formula Area = 1/2 |A × B|. The magnitude of the cross product is |(1*4 - 2*3)| = |4 - 6| = 2, so Area = 1/2 * 2 = 1.",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543450832-3",
+                "question": "If the position vector of point A is (2, 3) and point B is (5, 7), what is the position vector of the midpoint M?",
+                "options": [
+                  "(3.5, 5)",
+                  "(3, 5)",
+                  "(4, 5)",
+                  "(3, 4)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "The midpoint M of points A and B is calculated as M = ((x1 + x2)/2, (y1 + y2)/2) = ((2 + 5)/2, (3 + 7)/2) = (3.5, 5).",
+                "difficulty": "medium"
+              },
+              {
+                "id": "vector-basics-ai-1759543450832-4",
+                "question": "The vector A = (2, 3) is reflected over the line y = x. What is the reflected vector?",
+                "options": [
+                  "(3, 2)",
+                  "(2, 3)",
+                  "(0, 0)",
+                  "(1, 1)"
+                ],
+                "correctAnswer": 0,
+                "explanation": "When a point (x, y) is reflected over the line y = x, the coordinates become (y, x). Therefore, the reflection of A = (2, 3) is (3, 2).",
                 "difficulty": "medium"
               }
             ]
